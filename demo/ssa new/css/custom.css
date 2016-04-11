@@ -1,0 +1,146 @@
+body {
+	padding: 0;
+	margin: 0;
+	background: #fff
+}
+html, body {
+	height: 100%;
+	font-size: 17px;
+}
+section {
+	width: 100%;
+	padding: 90px 0;
+	position: relative;
+}
+h1, 
+h2,
+h3,
+h4,
+h5,
+h6 {
+	margin: 0;
+}
+.tcolor {
+	color: #ffbf3d;
+}
+.wcolor {
+	color: #fff;
+}
+/* homepage banner start */
+section#homepage_banner {
+	background-size: cover;
+	width: 100%;
+	padding: 40px 0;
+	min-height: 995px;
+	background: url(../img/banner-bg.jpg);
+	background-repeat: no-repeat;
+}
+@media (min-width: 768px) {
+	section#homepage_banner {
+		min-height: 995px;
+	}
+}
+.navbar-brand {
+	position: relative;
+}
+.navbar-brand img {
+	position: absolute;
+	max-width: 180px;
+	margin-top: -20px;
+}
+.navbar-default {
+	background: transparent;
+	border: 0;
+	z-index: 99999;
+}
+.navbar-default .navbar-nav > .active > a,
+.navbar-default .navbar-nav > .active > a:hover, 
+.navbar-default .navbar-nav > .active > a:focus {
+	color: #ffbf3d;
+    background-color: transparent;
+}
+.navbar-default .navbar-nav > li > a {
+	color: #fff;
+	text-transform: uppercase;
+	transition: .4s all ease-in-out;
+}
+.navbar-default .navbar-nav > li > a:hover {
+	color: #ffbf3d;
+	transition: .2s all ease-in-out;
+}
+section#homepage_banner h1.title {
+	margin-top: 180px;
+	border-bottom: 2px solid #fff;
+	font-size: 55px;
+	padding: 20px 0;
+	margin-bottom: 20px;
+	line-height: 55px;
+}
+section#homepage_banner h4.subtitle {
+	font-size: 22px;
+	font-weight: normal;
+}
+section#homepage_banner h4.subtitle a:hover {
+	text-decoration: underline;
+	color: #ffbf3d;
+	transition: .4s all ease-in-out;
+
+}
+section#homepage_banner img.anniv_logo {
+	margin-top: 100px;
+	max-width: 300px;
+}
+/* homepage banner end */
+
+/* home about start */
+section#home_about .border{
+	border-bottom: 2px solid #c2c2c2;
+}
+section#home_about h1.title {
+	font-size: 55px;
+	padding: 20px 0;
+	line-height: 55px;
+}
+section#home_about p.desc {
+	font-size: 22px;
+	width: 80%;
+	margin-top: 30px;
+	margin-bottom: 0;
+}
+section#home_about .link {
+	float: left;
+	font-size: 17px;
+	width: 190px;
+	margin-top: 30px;
+	padding: 15px 30px;
+	text-align: center;
+	border-radius: 6px;
+	color: #333;
+	font-weight: bold;
+	box-shadow: none;	
+}
+section#home_about .link1 {
+	margin-right: 10px;
+	font-weight: bold;
+	border: 1px solid #c2c2c2;
+	background: #fff;
+}
+section#home_about .link2 {
+	background: #ffbf3d;
+	border: 1px solid #ffbf3d;
+}
+/* home about end */
+
+
+
+/* home testimonial start */
+section#home_testimonial {
+	background-size: 100% 100%;
+	width: 100%;
+	padding: 40px 0;
+	min-height: 1070px;
+	background: url(../img/testimonial-bg.png);
+	background-repeat: no-repeat;
+}
+
+/* home testimonial end */
