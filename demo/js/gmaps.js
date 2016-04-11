@@ -1,4 +1,3 @@
-function initialize() {
     var mapOptions = {
     zoom: 19,
     center: new google.maps.LatLng(1.319670, 103.892475),
@@ -52,8 +51,6 @@ function initialize() {
     beachMarker4.setAnimation(google.maps.Animation.BOUNCE);   
 
 
-}
-
 
 function go_hq() {
 
@@ -104,7 +101,6 @@ function go_jurong() {
     map.panTo(panPoint);    
     
     beachMarker2.setAnimation(google.maps.Animation.BOUNCE);
-    beachMarker2.setMap(null);
 }
 
 function go_manila() {
@@ -123,4 +119,4 @@ function go_somerset(){
 
 
 
-google.maps.event.addDomListener(window, 'load', initialize);
+google.maps.event.addDomListener(window, 'load');
