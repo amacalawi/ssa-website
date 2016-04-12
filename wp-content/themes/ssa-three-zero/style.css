@@ -5,6 +5,9 @@ Version: 3.3.1
 Author: John Lioneil
 */
 
+html, body {
+    overflow-x: hidden;
+}
 .services_banner .navbar-default {
     position: absolute;
     width: 100%;

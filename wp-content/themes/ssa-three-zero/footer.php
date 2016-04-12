@@ -49,33 +49,15 @@
                                 </ul>
                             </div>
                             <div class="col-xs-6 col-md-3">
-                                <h5>LINKS</h5>
-                                <ul class="list-unstyled">
-                                    <li>
-                                        <a title="Services" href="#">
-                                            <span>Services</span>
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a title="Clients" href="#">
-                                            <span>Clients</span>
-                                        </a></li>
-                                    <li>
-                                        <a title="Events" href="#">
-                                            <span>Events</span>
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a title="Blogs" href="#">
-                                           <span>Blogs</span>
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a title="CSR" href="#">
-                                            <span>CSR</span>
-                                        </a>
-                                    </li>
-                                </ul>
+                                <?php
+                                if ( has_nav_menu( 'internal_links' ) ) {
+                                    $menu_name = 'internal_links';
+                                    $locations = get_nav_menu_locations();
+                                    $menu_id = $locations[ $menu_name ] ;
+                                    $internal_links = wp_get_nav_menu_object($menu_id); ?>
+                                    <h5><?php echo $internal_links->name ?></h5><?php
+                                    wp_internal_links();
+                                } ?>
                             </div>
                             <div class="col-xs-6 col-md-3 col-md-offset-1">
                                 <?php
@@ -91,14 +73,15 @@
                         </div>
                     </div>
                     <div class="col-sm-12 col-md-3">
-                        <h5>Contact Us</h5>
-                            <ul class="list-unstyled">
-                                <li>11 Eunos Road 8 Lifelong Learning Institute #06-01 Singapore 408601
-                                </li>
-                                <li>Tel: +65 6842 2282</li>
-                                <li>Fax: +65 6842 2282</li>
-                                <li>contact@ssagroup.com</li>
-                            </ul>
+                        <?php
+                        if ( has_nav_menu( 'contact_links' ) ) {
+                            $menu_name = 'contact_links';
+                            $locations = get_nav_menu_locations();
+                            $menu_id = $locations[ $menu_name ] ;
+                            $contact_links = wp_get_nav_menu_object($menu_id); ?>
+                            <h5><?php echo $contact_links->name ?></h5><?php
+                            wp_contact_links();
+                        } ?>
                     </div>
 
                 </div>

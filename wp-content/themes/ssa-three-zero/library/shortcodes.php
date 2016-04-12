@@ -101,10 +101,27 @@ function testimonials( $atts, $content = null ) {
 	wp_reset_query();  // Restore global post data stomped by the_post().
 	return ob_get_clean();
 }
-
 add_shortcode('testimonials', 'testimonials');
 
+// Social links
+function social_links( $atts, $content = null ) {
+	$a = shortcode_atts( array(
+		'facebook' => '',
+		'twitter' => '',
+		'linkedin' => '',
+		'instagram' => '',
+		'youtube' => '',
+	), $atts );
 
-
-
-?>
+	ob_start(); ?>
+	<p class="social"><?php
+	foreach ($a as $key => $value) {
+		if('' !== $value) { ?>
+            <a target="_blank" href="<?php echo $value ?>"><i class="fa fa-<?php echo $key ?>"></i><span class="sr-only"><?php echo ucwords($key); ?></span></a>
+        <?php
+		}
+	} ?>
+	</p><?php
+	return ob_get_clean();
+}
+add_shortcode('social_links', 'social_links');

@@ -39,26 +39,95 @@ if( /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(naviga
 jQuery(document).ready(function($) {
     /*
     | -----------------------
+    | # Drives
+    | -----------------------
+    */
+    /* drives starts here */
+    if($('body').hasClass('page-template-page-about')) {
+        $('.drives a').bind('click', function(event) {
+            var $anchor = $(this).attr('href');
+            var $content_drives = $(".drives-content");
+            var $content_list = $(".drives li");
+
+            $content_list.removeClass("active").find("em").removeClass("fadeInRight animated").next().removeClass("fadeInRight animated");;
+            $(this).parent().addClass("active").find("em").addClass("fadeInRight animated").next().addClass("fadeInRight animated");
+
+            $($content_drives).css({"display":"none"});
+            $($anchor).fadeIn("fast");
+
+            event.preventDefault();
+        });
+    }
+    /* drives ends here */
+    /*
+    | -----------------------
+    | # About Us / Milestones
+    | -----------------------
+    */
+    $('.milestone-year').bind('mousewheel', function() {
+        return false;
+    });
+    var owl = $('.milestone-year');
+    owl.owlCarousel({
+        loop:true,
+        dots: false,
+        center: true,
+        responsive:{
+            0:{
+                items:1
+            },
+            600:{
+                items:3
+            },
+            1200:{
+                items:7
+            }
+        }
+    });
+    owl.on('mousewheel', '.owl-stage', function (e) {
+        if (e.deltaY>0) {
+            owl.trigger('next.owl');
+        } else {
+            owl.trigger('prev.owl');
+        }
+        e.preventDefault();
+    });
+    owl.on('translate.owl.carousel', function(e){
+        idx = e.item.index;
+        $('.owl-item.big').removeClass('big');
+        $('.owl-item.medium').removeClass('medium');
+        $('.owl-item').eq(idx).addClass('big');
+        $('.owl-item').eq(idx-1).addClass('medium');
+        $('.owl-item').eq(idx+1).addClass('medium');
+    });
+    owl.on('changed.owl.carousel', function(e) {
+        idx = e.item.index;
+        var $value = $('.owl-item').eq(idx).find('h4').text();
+        $(".milestone-content .item").css({"display":"none"});
+        $(".milestone-"+$value).fadeIn();
+    });
+    /*
+    | -----------------------
     | # Map
     | -----------------------
     */
     if( $('body').hasClass('page-template-page-contact') )
     {
-        var map;
-        map = new GMaps({
-            el: '#map',
-            lat: -12.043333,
-            lng: -77.028333,
-            zoomControl : true,
-            zoomControlOpt: {
-                style : 'SMALL',
-                position: 'TOP_LEFT'
-            },
-            panControl : false,
-            streetViewControl : false,
-            mapTypeControl: false,
-            overviewMapControl: false
-        });
+        // var map;
+        // map = new GMaps({
+        //     el: '#map',
+        //     lat: -12.043333,
+        //     lng: -77.028333,
+        //     zoomControl : true,
+        //     zoomControlOpt: {
+        //         style : 'SMALL',
+        //         position: 'TOP_LEFT'
+        //     },
+        //     panControl : false,
+        //     streetViewControl : false,
+        //     mapTypeControl: false,
+        //     overviewMapControl: false
+        // });
     }
     /*
     | -----------------------
@@ -84,8 +153,8 @@ jQuery(document).ready(function($) {
         nav: true,
         dots: false,
         navText: [
-          "<i class='zmdi zmdi-chevron-left tcolor'></i>",
-          "<i class='zmdi zmdi-chevron-right tcolor'></i>",
+          "<i class='fa fa-chevron-left tcolor'></i>",
+          "<i class='fa fa-chevron-right tcolor'></i>",
           ],
         loop:true,
     });

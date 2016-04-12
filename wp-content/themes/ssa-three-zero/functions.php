@@ -68,7 +68,10 @@ if( !function_exists( "wp_bootstrap_theme_support" ) ) {
       array(
         'main_nav' => 'The Main Menu',   // main nav in header
         'footer_links' => 'Footer Links', // secondary nav in footer,
+        'internal_links' => 'Internal Links',
+        'contact_links' => 'Contact Links',
         'social_links' => 'Social Links',
+        'company_links' => 'Company Links',
       )
     );
   }
@@ -110,6 +113,30 @@ function wp_social_links()
             'menu_class' => 'list-unstyled icon-menu',
             'theme_location' => 'social_links', /* where in the theme it's assigned */
             'container_class' => 'social-links clearfix', /* container class */
+    ));
+}
+
+function wp_internal_links()
+{
+    wp_nav_menu(
+        array(
+            'menu' => 'internal_links', /* menu name */
+            'menu_class' => 'list-unstyled',
+            'theme_location' => 'internal_links', /* where in the theme it's assigned */
+            'container_class' => 'internal-links clearfix', /* container class */
+            'before'=> '<span>',
+            'after' => '</span>',
+    ));
+}
+
+function wp_contact_links()
+{
+    wp_nav_menu(
+        array(
+            'menu' => 'contact_links', /* menu name */
+            'menu_class' => 'list-unstyled icon-menu',
+            'theme_location' => 'contact_links', /* where in the theme it's assigned */
+            'container_class' => 'contact-links clearfix', /* container class */
     ));
 }
 
@@ -438,7 +465,8 @@ function wp_bootstrap_add_homepage_meta_box() {
             'high'); // $priority
     }
 
-    if ( $template_file == 'page-single-event.php' ) {
+    $post_data = get_post($post->post_parent);
+    if ( $template_file == 'page-single-event.php' || 'csr' == $post_data->post_name) {
         add_meta_box(
             'my_event_meta_box', // $id
             'Event subheading', // $title
@@ -762,6 +790,9 @@ if( !function_exists("wp_bootstrap_theme_styles") ) {
         wp_register_style( 'md-icons', get_template_directory_uri() . '/vendor/material-design-iconic-font/dist/css/material-design-iconic-font.min.css', array(), '0.4.5', 'all' );
         wp_enqueue_style( 'md-icons' );
 
+        wp_register_style( 'font-awesome', get_template_directory_uri() . '/vendor/font-awesome/css/font-awesome.min.css', array(), '4.2.0', 'all' );
+        wp_enqueue_style( 'font-awesome' );
+
         wp_register_style( 'owl-carousel', get_template_directory_uri() . '/vendor/owl-carousel/dist/css/owl.carousel.css', array(), '0.4.5', 'all' );
         wp_enqueue_style( 'owl-carousel' );
 
@@ -827,19 +858,20 @@ if( !function_exists( "wp_bootstrap_theme_js" ) ) {
       array('jquery'),
       '1.2', true );
 
+    wp_register_script( 'gmap-api',
+      get_template_directory_uri() . '/js/gmap.js',
+      array('jquery'),
+      '1.0.0', true );
+    wp_register_script( 'gmaps',
+      get_template_directory_uri() . '/js/gmaps.js',
+      array('jquery'),
+      '1.0.0', true );
+
     wp_register_script( 'functions',
       get_template_directory_uri() . '/js/functions.js',
       array('jquery'),
       '1.0.0', true );
 
-    wp_register_script( 'gmaps',
-      get_template_directory_uri() . '/js/gmaps.js',
-      array('jquery'),
-      '1.0.0', true );
-    wp_register_script( 'gmap-api',
-      'http://maps.google.com/maps/api/js?sensor=true',
-      array('jquery'),
-      '1.0.0', true );
 
     wp_enqueue_script( 'jquery-version-2.1.1' );
     wp_enqueue_script( 'jquery-nicescroll' );
@@ -848,8 +880,10 @@ if( !function_exists( "wp_bootstrap_theme_js" ) ) {
     wp_enqueue_script( 'modernizr' );
     wp_enqueue_script( 'owl-carousel' );
     wp_enqueue_script( 'waves' );
-    wp_enqueue_script( 'gmaps' );
-    wp_enqueue_script( 'gmap-api' );
+    if( is_page('contact-us') || is_page('contact') ) {
+      wp_enqueue_script( 'gmap-api' );
+      wp_enqueue_script( 'gmaps' );
+    }
     wp_enqueue_script( 'functions' );
 
   }
@@ -1111,3 +1145,71 @@ add_filter( 'comment_form_fields', 'move_comment_field_to_bottom' );
 // }
 
 // add_action('pre_comment_on_post', 'ssa_validate_comment_url');
+//
+//
+/**
+ * Returns a url-friendly version of the string
+ *
+ * @param  [type] $string       [description]
+ * @param  string $case         [description]
+ * @param  array  $replacements [description]
+ * @param  string $delimiter    [description]
+ * @param  string $space        [description]
+ * @return [type]               [description]
+ */
+function slugify($string, $case='lower', $replacements=[], $delimiter="-", $space=" ")
+{
+    $slug = "";
+
+    # Add more here
+    $defaults = array(
+        '.' => '',
+        ',' => '',
+        '!' => '',
+        '#' => '',
+        '?' => '',
+        '+' => '',
+        '_' => '',
+        ')' => '',
+        '(' => '',
+        '*' => '',
+        '&' => '',
+        '@' => '-at-',
+        '/' => '',
+        '\\' => '',
+        ':' => '',
+        '*' => '',
+        '?' => '',
+        '"' => '',
+        '<' => '',
+        '>' => '',
+        '\'' => '',
+        '|' => '',
+    );
+
+    # Combine $replacements array with $defaults array
+    # Substitute the speicifed chars in $string
+    $string = strtr( $string, array_merge($defaults, $replacements) );
+
+    switch ($case) {
+        case 'lower':
+            $slug = strtolower( implode($delimiter, explode($space, $string ) ) );
+            break;
+
+        case 'upper':
+            $slug = strtoupper( implode($delimiter, explode($space, $string ) ) );
+            break;
+
+        case 'title':
+            $slug = ucwords( implode($delimiter, explode($space, $string ) ) );
+            break;
+
+        case 'none':
+        case '':
+        case 'default':
+        default:
+            $slug = implode($delimiter, explode($space, $string ) );
+            break;
+    }
+    return trim( $slug );
+}
