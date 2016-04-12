@@ -1,0 +1,41 @@
+<?php get_header(); ?>
+
+</section>
+    <div class="container">
+        <div id="content" class="clearfix row">
+            <div id="main" class="col-sm-12 clearfix" role="main">
+
+                <?php if (have_posts()) : while (have_posts()) : the_post(); ?>
+
+                    <article id="page-<?php the_ID(); ?>" <?php post_class('clearfix'); ?> role="article" itemscope itemtype="http://schema.org/BlogPosting">
+                        <header>
+                            <div class="page-header"><h1 class="page-title" itemprop="headline"><?php the_title(); ?></h1></div>
+                        </header> <!-- end article header -->
+
+                        <section class="post_content clearfix" itemprop="articleBody">
+                            <?php the_content(); ?>
+                        </section> <!-- end article section -->
+
+                        <footer>
+                            <?php the_tags('<p class="tags"><span class="tags-title">' . __("Tags","wpbootstrap") . ':</span> ', ', ', '</p>'); ?>
+                        </footer> <!-- end article footer -->
+                    </article> <!-- end article -->
+
+                    <?php /* START: Get all child pages */ ?>
+                    <?php $mypages = get_pages( array( 'child_of' => $post->ID, 'sort_column' => 'menu_order', 'sort_order' => 'ASC' ) ); ?>
+
+                    <?php foreach( $mypages as $post ) {
+                        setup_postdata($post); ?>
+                        <h2 class="<?php echo $post->post_name ?>"><?php the_title(); ?></h2>
+                        <div class="entry"><?php the_content(); ?></div> <?php
+                    } ?> <?php /* END: Got all child pages */ ?>
+
+                    <?php endwhile; ?>
+
+                <?php endif; ?>
+
+            </div> <!-- end #main -->
+        </div> <!-- end #content -->
+    </div>
+
+<?php get_footer(); ?>

@@ -1,0 +1,184 @@
+/*
+Theme Name: SSA Three Zero
+Description: For the SSA 30th Anniversary
+Version: 3.3.1
+Author: John Lioneil
+*/
+
+.services_banner .navbar-default {
+    position: absolute;
+    width: 100%;
+}
+#banner {
+    padding-top: 0;
+}
+/* Sections */
+.section, [class*="section-"] {
+    padding: 120px 0;
+    /*z-index: 2;*/
+    background-color: transparent;
+    position: relative;
+    overflow: hidden;
+}
+@media (min-width: 768px) {
+    .banner {
+        min-height: 100vh;
+        height: auto;
+    }
+}
+.section-17 {
+    min-height: 0;
+}
+.section:after,
+.section:not(:first-of-type):before {
+    content: '';
+    position: absolute;
+    left: 0;
+    width: 100%;
+    height: 200px;
+    background: #ffffff;
+    -webkit-transform: skewY(-5deg);
+    -moz-transform: skewY(-5deg);
+    -ms-transform: skewY(-5deg);
+    -o-transform: skewY(-5deg);
+    transform: skewY(-5deg);
+    -webkit-backface-visibility: hidden;
+    z-index: 1;
+}
+.section:after {
+    bottom: -100px;
+}
+.section:before {
+    top: -100px;
+}
+
+.section h1 {
+    font-weight: 900;
+    font-style: italic;
+}
+
+.section p {
+    font-size: 22px;
+    width: 80%;
+    /* margin-top: 30px; */
+    font-weight: normal;
+    margin-bottom: 0;
+}
+/* home about start */
+.section .border {
+    border-bottom: 1px solid #e0e0e0;
+    margin-bottom: 30px;
+}
+.section h1.title {
+    font-size: 55px;
+    padding: 20px 0;
+    line-height: 55px;
+}
+.section p.desc {
+    font-size: 22px;
+    width: 80%;
+    /*margin-top: 30px;*/
+    font-weight: normal;
+    margin-bottom: 0;
+}
+.section .link {
+    float: left;
+    font-size: 17px;
+    width: 190px;
+    margin-top: 30px;
+    padding: 15px 30px;
+    text-align: center;
+    border-radius: 6px;
+    color: #333;
+    font-weight: bold;
+    box-shadow: none;
+}
+.section .link1 {
+    margin-right: 10px;
+    font-weight: bold;
+    border: 1px solid #c2c2c2;
+    background: #fff;
+}
+.section .link2 {
+    background: #ffbf3d;
+    border: 1px solid #ffbf3d;
+}
+
+.testimonial-section {
+    width: 100%;
+    padding: 60px 0;
+    /*background: url(img/testimonial_bg.jpg);*/
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: relative;
+}
+@media (min-width: 768px) {
+    .testimonial-section {
+        height: 868px;
+        min-height: 100vh;/*868px;*/
+    }
+}
+.testimonial-section p {
+    margin-top: 300px;
+    font-size: 28px;
+    line-height: 30px;
+    letter-spacing: 1px;
+}
+.testimonial-section p i {
+    font-size: 50px;
+}
+.testimonial-section p span {
+    display: block;
+    clear: both;
+    margin-top: 30px;
+}
+.testimonial-section .owl-theme .owl-dots {
+    margin-top: 40px;
+}
+.testimonial-section .owl-theme .owl-dots .owl-dot span {
+    width: 18px;
+    height: 18px;
+}
+
+.section-special {
+    padding-top: 180px;
+}
+.section-special:not(:first-of-type) {
+    padding-top: 180px;
+}
+
+.section .heading-lg {
+    font-size: 3rem;
+    font-weight: bold;
+}
+/* home about end */
+/* End Sections */
+
+
+
+.arrow-straight {
+    top: -253px;
+    height: 768px;
+    z-index: 99;
+}
+
+footer #back-to-top {
+    z-index: 999999;
+}
+
+.btn.link1, .btn.link2 {
+    -webkit-transition: all 0.1s ease-in;
+    -o-transition: all 0.1s ease-in;
+    transition: all 0.1s ease-in;
+}
+.btn.link1:hover,
+.btn.link1:focus,
+.btn.link1:active {
+    background-color: #ffbf3d;
+    border-color: #ffbf3d;
+}
+.btn.link2:hover,
+.btn.link2:focus,
+.btn.link2:active {
+    background-color: #f9b834;
+}
