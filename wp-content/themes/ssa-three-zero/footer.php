@@ -24,29 +24,15 @@
                     <div class="col-sm-12 col-md-6">
                         <div class="row">
                             <div class="col-xs-6 col-md-3 col-md-offset-1">
-                                <h5>Company</h5>
-                                <ul class="list-unstyled">
-                                    <li>
-                                        <a title="Executives" href="#">
-                                            <span>Executives</span>
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a title="Vision and Mission" href="#">
-                                            <span>Vision &amp; Mission</span>
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a title="Values" href="#">
-                                            <span>Values</span>
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a title="Milestones" href="#">
-                                            <span>Milestones</span>
-                                        </a>
-                                    </li>
-                                </ul>
+                                <?php
+                                if ( has_nav_menu( 'company_links' ) ) {
+                                    $menu_name = 'company_links';
+                                    $locations = get_nav_menu_locations();
+                                    $menu_id = $locations[ $menu_name ] ;
+                                    $company_links = wp_get_nav_menu_object($menu_id); ?>
+                                    <h5><?php echo $company_links->name ?></h5><?php
+                                    wp_company_links();
+                                } ?>
                             </div>
                             <div class="col-xs-6 col-md-3">
                                 <?php

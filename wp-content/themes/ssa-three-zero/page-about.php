@@ -44,6 +44,7 @@ $children = get_posts(array(
 foreach ($children as $post) {
     setup_postdata($post); ?>
     <section class="<?php echo $post->post_name ?>" id="<?php echo $post->post_name ?>">
+        <a name="<?php echo $post->post_name ?>" class="sr-only"><?php the_title() ?></a>
         <div class="col-sm-5">
             <h1 class="text-right"><em><strong><?php the_title() ?></strong></em></h1>
             <?php the_content(); ?>
@@ -91,6 +92,7 @@ $children = get_posts(array(
 foreach ($children as $post) {
     setup_postdata($post); ?>
     <section class="<?php echo $post->post_name ?> bg" id="<?php echo $post->post_name ?>" data-bg="<?php echo get_the_post_thumbnail_url_raw() ?>">
+        <a name="<?php echo $post->post_name ?>" class="sr-only"><?php the_title() ?></a>
         <div class="overlay-pattern0"></div>
         <?php
         $parent_id = get_the_ID();
@@ -157,6 +159,7 @@ $children = get_posts(array(
 foreach($children as $post) {
     setup_postdata($post); ?>
     <section class="<?php echo $post->post_name ?> bg" id="<?php echo $post->post_name ?>" data-bg="<?php echo get_the_post_thumbnail_url_raw(); ?>">
+        <a name="<?php echo $post->post_name ?>" class="sr-only"><?php the_title() ?></a>
         <div class="col-sm-5">
             <h1 class="text-right"><em><strong><?php the_title() ?></strong></em></h1>
             <div class="border-right-straight"></div>
@@ -207,256 +210,50 @@ foreach($children as $post) {
 } wp_reset_postdata(); ?>
 
 <section class="milestones">
+    <a name="milestones" class="sr-only">Milestones</a>
     <div class="overlay-pattern0"></div>
-
     <div class="milestone-content">
-        <div class="item milestone-1986">
-            <ul class="timeline">
-                <li>
-                    <spans class="badges"></spans>
-                    <span class="tcolor">SSA Cosulting Group (SSA) </span> established
-                </li>
-            </ul>
-        </div>
-        <div class="item milestone-1992">
-            <ul class="timeline">
-                <li>
-                    <spans class="badges"></spans>
-                    Developed and launched <span class="tcolor">Programme for the Revitalisation of Mature Employees (PRIME)</span>
-                </li>
-            </ul>
-        </div>
-        <div class="item milestone-1995">
-            <ul class="timeline">
-                <li>
-                    <spans class="badges"></spans>
-                    Developed and launched <span class="tcolor">Developing Resourcefulness in Valued Employee (DRIVE)</span>
-                </li>
-            </ul>
-        </div>
-        <div class="item milestone-2001">
-            <ul class="timeline">
-                <li>
-                    <spans class="badges"></spans>
-                    <span class="tcolor">SME Partner</span>
-                    Award
-                </li>
-            </ul>
-        </div>
-        <div class="item milestone-2003">
-            <ul class="timeline">
-                <li>
-                    <spans class="badges"></spans>
-                    Developed and launched <span class="tcolor">Skills Certificate in Small Business </span>
-                    in collaboration with Temasek Polytechnic
-                </li>
-            </ul>
-        </div>
-        <div class="item milestone-2005">
-            <ul class="timeline">
-                <li>
-                    <spans class="badges"></spans>
-                    Developed and launched <span class="tcolor"> Certificate in Management of Non-Profit Organisation </span>
-                    in collaboration with Ngee Ann Polytechnic &amp; SSTI
-                </li>
-            </ul>
-        </div>
-        <div class="item milestone-2008">
-            <ul class="timeline">
-                <li>
-                    <spans class="badges"></spans>
-                    Appointed as one of the pioneer CET Centres in <span class="tcolor"> Employability Skills System (ESS) </span>
-                </li>
-            </ul>
-        </div>
-        <div class="item milestone-2009">
-            <ul class="timeline">
-                <li>
-                    <spans class="badges"></spans>
-                    Appointed as Programme Partner for <span class="tcolor"> Generic Manufacturing SKills (WSQ) </span>
-                </li>
-                <li class="invert">
-                    <spans class="badges"></spans>
-                    Approved Training Organisation for <span class="tcolor"> Service Excellence </span>
-                </li>
-                <li>
-                    <spans class="badges"></spans>
-                    Appointed CET Centre for <span class="tcolor"> CSP programme </span>
-                </li>
-            </ul>
-        </div>
-        <div class="item milestone-2010">
-            <ul class="timeline">
-                <li>
-                    <spans class="badges"></spans>
-                    Appointed as Approved Programme Provider for the <span class="tcolor"> ACCA Continuing Professional Development (CPD) </span>
-                </li>
-                <li class="invert">
-                    <spans class="badges"></spans>
-                    Reappointed as a CET Centre for <span class="tcolor"> Workplace Literacy &amp; Numeracy (WPLN) </span>
-                </li>
-                <li>
-                    <spans class="badges"></spans>
-                    Accredited <span class="tcolor"> ICDL Test Centre </span>
-                </li>
-            </ul>
-        </div>
-        <div class="item milestone-2011">
-            <ul class="timeline">
-                <li>
-                    <spans class="badges"></spans>
-                    Reappoited as CET Centre for <span class="tcolor"> Workplace Skills (WPS) </span>
-                </li>
-                <li class="invert">
-                    <spans class="badges"></spans>
-                    Appointed as CET Centre for <span class="tcolor"> Executive Development &amp; Growth for Excellence (EDGE) </span>
-                </li>
-                <li>
-                    <spans class="badges"></spans>
-                    Listed in <span class="tcolor"> SME 1000 2011 </span> by DP Information Group
-                </li>
-            </ul>
-        </div>
-        <div class="item milestone-2012">
-            <ul class="timeline">
-                <li>
-                    <spans class="badges"></spans>
-                    Listed in <span class="tcolor">SME 1000 2012</span>
-                </li>
-                <li class="invert">
-                    <spans class="badges"></spans>
-                    Apointed CET Centre in <span class="tcolor">Genereic Manufacturing Skills (GMS)</span>
-                </li>
-                <li>
-                    <spans class="badges"></spans>
-                    Appointed as <span class="tcolor">Programme Provider for ICPAS</span>
-                </li>
-                <li class="invert">
-                    <spans class="badges"></spans>
-                    Award for <span class="tcolor">ICDL Operational Excellence</span>
-                </li>
-                <li>
-                    <spans class="badges"></spans>
-                    ICV Accredited <span class="tcolor">by Spring Singapore</span>
-                </li>
-            </ul>
-        </div>
-        <div class="item milestone-2013">
-            <ul class="timeline">
-                <li>
-                    <spans class="badges"></spans>
-                    Listed in <span class="tcolor">SME 1000 2013</span>
-                </li>
-                <li class="invert">
-                    <spans class="badges"></spans>
-                    Reappointed as <span class="tcolor">CET Centre for WPLN</span>
-                </li>
-                <li>
-                    <spans class="badges"></spans>
-                    Appointed as <span class="tcolor">ATO Chartered Accountant (Singapore) </span> under the Singapore Qualifications Programme
-                </li>
-            </ul>
-        </div>
-        <div class="item milestone-2014">
-            <ul class="timeline">
-                <li>
-                    <spans class="badges"></spans>
-                    Listed in <span class="tcolor">SME 1000 2014</span>
-                </li>
-                <li class="invert">
-                    <spans class="badges"></spans>
-                    Promising <span class="tcolor"> SME 500 2014</span>
-                </li>
-                <li>
-                    <spans class="badges"></spans>
-                    Established office in <span class="tcolor">Manila, Philippines </span>
-                </li>
-                <li class="invert">
-                    <spans class="badges"></spans>
-                    <span class="tcolor"> ICDL Operational Excellence </span> Award
-                </li>
-            </ul>
-        </div>
-        <div class="item milestone-2015">
-            <ul class="timeline">
-                <li>
-                    <spans class="badges"></spans>
-                    Listed in <span class="tcolor">SME 1000 2015</span>
-                </li>
-                <li class="invert">
-                    <spans class="badges"></spans>
-                    <span class="tcolor"> ICDL Operational Excellence</span> Award
-                </li>
-                <li>
-                    <spans class="badges"></spans>
-                    <span class="tcolor">2015 APAC Insider Business Awards </span>  for Best Management &amp; Training Consultancy Firm - Singapore
-                </li>
-            </ul>
-        </div>
-        <div class="item milestone-2016" style="">
-            <ul class="timeline">
-                <li>
-                    <spans class="badges"></spans>
-                    <span class="tcolor">Promising SME 500 Industry Star Award </span> (Training &amp; Consultancy)
-                </li>
-                <li class="invert">
-                    <spans class="badges"></spans>
-                    Promising <span class="tcolor"> SME 500 2016</span>
-                </li>
-                <li>
-                    <spans class="badges"></spans>
-                    Listen in <span class="tcolor">SME 1000 2016</span>
-                </li>
-            </ul>
-        </div>
+        <?php
+        $custom_terms = get_terms('milestone_cat');
+        foreach($custom_terms as $custom_term) {
+            wp_reset_query();
+            $args = array('post_type' => 'milestones',
+                'tax_query' => array(
+                    array(
+                        'taxonomy' => 'milestone_cat',
+                        'field' => 'slug',
+                        'terms' => $custom_term->slug,
+                    ),
+                ),
+            );
 
+            $loop = new WP_Query($args);
+            if($loop->have_posts()) {
+                $i=1; ?>
+                <div class="item milestone-<?php echo $custom_term->name ?>">
+                    <ul class="timeline">
+                        <?php
+                        while($loop->have_posts()) : $loop->the_post(); ?>
+                            <li <?php echo $i%2==0?'class="invert"':''; $i++; ?> >
+                                <spans class="badges"></spans>
+                                <h2 class="wcolor sr-only"><?php the_title(); ?></h2>
+                                <?php echo do_shortcode($post->post_content); ?>
+                            </li><?php
+                        endwhile; ?>
+                    </ul>
+                </div><?php
+            }
+        } ?>
     </div>
     <div class="milestone-year">
-        <div class="item">
-            <h4>1986</h4>
-        </div>
-        <div class="item">
-            <h4>1992</h4>
-        </div>
-        <div class="item">
-            <h4>1995</h4>
-        </div>
-        <div class="item">
-            <h4>2001</h4>
-        </div>
-        <div class="item">
-            <h4>2003</h4>
-        </div>
-        <div class="item">
-            <h4>2005</h4>
-        </div>
-        <div class="item">
-            <h4>2008</h4>
-        </div>
-        <div class="item">
-            <h4>2009</h4>
-        </div>
-        <div class="item">
-            <h4>2010</h4>
-        </div>
-        <div class="item">
-            <h4>2011</h4>
-        </div>
-        <div class="item">
-            <h4>2012</h4>
-        </div>
-        <div class="item">
-            <h4>2013</h4>
-        </div>
-        <div class="item">
-            <h4>2014</h4>
-        </div>
-        <div class="item">
-            <h4>2015</h4>
-        </div>
-        <div class="item">
-            <h4>2016</h4>
-        </div>
+        <?php
+        foreach($custom_terms as $custom_term) {
+            ?>
+            <div class="item">
+                <h4><?php echo $custom_term->name ?></h4>
+            </div>
+            <?php
+        } wp_reset_query(); ?>
     </div>
 </section>
 

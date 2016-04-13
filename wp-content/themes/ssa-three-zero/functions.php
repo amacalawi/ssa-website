@@ -140,6 +140,17 @@ function wp_contact_links()
     ));
 }
 
+function wp_company_links()
+{
+    wp_nav_menu(
+        array(
+            'menu' => 'company_links', /* menu name */
+            'menu_class' => 'list-unstyled icon-menu',
+            'theme_location' => 'company_links', /* where in the theme it's assigned */
+            'container_class' => 'company-links clearfix', /* container class */
+    ));
+}
+
 
 // this is the fallback for header menu
 function wp_bootstrap_main_nav_fallback() {
@@ -834,6 +845,11 @@ if( !function_exists( "wp_bootstrap_theme_js" ) ) {
       array('jquery'),
       '1.2', true );
 
+    wp_register_script( 'jquery-mousewheel',
+      get_template_directory_uri() . '/vendor/jquery-mousewheel/jquery.mousewheel.min.js',
+      array('jquery'),
+      '1.2', true );
+
     wp_register_script( 'jquery-nicescroll',
       get_template_directory_uri() . '/vendor/jquery.nicescroll/dist/jquery.nicescroll.min.js',
       array('jquery'),
@@ -876,6 +892,7 @@ if( !function_exists( "wp_bootstrap_theme_js" ) ) {
     wp_enqueue_script( 'jquery-version-2.1.1' );
     wp_enqueue_script( 'jquery-nicescroll' );
     wp_enqueue_script( 'jquery-easing' );
+    wp_enqueue_script( 'jquery-mousewheel' );
     wp_enqueue_script( 'bootstrap' );
     wp_enqueue_script( 'modernizr' );
     wp_enqueue_script( 'owl-carousel' );
@@ -1019,6 +1036,7 @@ add_filter( 'the_content', 'wp_bootstrap_filter_ptags_on_images' );
 
 // Custom Post Types
 require_once "library/testimonial-custom-post-type.php";
+require_once "library/milestone-custom-post-type.php";
 
 
 // Enable span tags in the Editor
