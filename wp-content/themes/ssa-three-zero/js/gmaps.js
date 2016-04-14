@@ -1,5 +1,5 @@
     var mapOptions = {
-    zoom: 19,
+    zoom: 14,
     center: new google.maps.LatLng(1.319670, 103.892475),
     mapTypeId: google.maps.MapTypeId.ROADMAP
     };
@@ -107,6 +107,7 @@ function go_ssa_manila() {
 
     var panPoint = new google.maps.LatLng(14.581694,121.060860);
     map.panTo(panPoint);
+    // map.panBy(panPoint);
     beachMarker3.setAnimation(google.maps.Animation.BOUNCE);
 
 }

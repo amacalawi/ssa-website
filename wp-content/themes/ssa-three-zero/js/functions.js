@@ -210,13 +210,23 @@ jQuery(document).ready(function($) {
         e.preventDefault();
 
         jQuery(this).parents('.video-container').toggleClass('expanded');
-        jQuery(this).toggleClass('play').delay(1000).queue(function (next) {
-            jQuery(this).find('.video-content').toggleClass('hidden zoomIn');
-            jQuery(this).find('.video-content')[0].play();
+        jQuery(this).toggleClass('play').delay(800).queue(function (next) {
+            jQuery(this).parents('.video-container').find('.video-content').toggleClass('hidden fadeInUp');
+            if( jQuery(this).hasClass('play') )
+            {
+                jQuery(this).addClass('btn-circle btn-close');
+                jQuery(this).parents('.video-container').find('.video-content')[0].play();
+            }
+            else
+            {
+                jQuery(this).removeClass('btn-circle btn-close');
+                jQuery(this).parents('.video-container').find('.video-content')[0].pause();
+            }
+            jQuery('section#banner').toggleClass("pt-page-flipInLeft");
             next();
         });
-        jQuery('.homepage-logo').toggleClass('animated');
     });
+
     /* arrow navigation starts here */
     $('.navigates').bind('click', function(event) {
         var $anchor = $(this);

@@ -106,14 +106,14 @@ foreach ($children as $post) {
         foreach ($children as $post) {
             setup_postdata($post); ?>
             <div class="top-content">
-                <div class="col-sm-7">
-
-                </div>
+                <div class="col-sm-7"></div>
                 <div class="col-sm-5">
                     <h1 class="tcolor"><strong><em><?php the_title(); ?></em></strong></h1>
-                    <p class="col-sm-8 wcolor">
-                        <?php echo do_shortcode($post->post_content); ?>
-                    </p>
+                    <div class="row">
+                        <div class="col-sm-7 wcolor">
+                            <?php echo do_shortcode($post->post_content); ?>
+                        </div>
+                    </div>
                 </div>
             </div>
             <?php
@@ -131,12 +131,15 @@ foreach ($children as $post) {
         foreach ($children as $post) {
             setup_postdata($post); ?>
             <div class="bottom-content">
-                <div class="col-sm-7">
+                <div class="col-sm-7 wcolor text-right">
                     <h1 class="tcolor text-right"><strong><em><?php the_title() ?></em></strong></h1>
-                    <?php the_content() ?>
+                    <div class="row">
+                        <div class="col-sm-offset-6 col-sm-6">
+                            <?php the_content() ?>
+                        </div>
+                    </div>
                 </div>
-                <div class="col-sm-5">
-                </div>
+                <div class="col-sm-5"></div>
             </div>
             <?php
         } wp_reset_postdata(); ?>

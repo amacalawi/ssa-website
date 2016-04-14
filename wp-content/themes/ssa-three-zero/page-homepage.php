@@ -40,13 +40,23 @@
                         <div class="col-sm-4">
                             <div class="video-container">
                                 <img src="<?php echo get_template_directory_uri().'/img/anniversary1.small.png' ?>" class="anniv_logo homepage-logo">
-                                <a href="#" class="btn-video btn-play">
-                                    <video id="video-content" class="video-content animated hidden" preload loop>
-                                        <!-- WCAG general accessibility recommendation is that media such as background video play through only once. Loop turned on for the purposes of illustration; if removed, the end of the video will fade in the same way created by pressing the "Pause" button  -->
+                                <button type="button" class="btn btn-video btn-outline btn-play"><i class="fa fa-play"></i> <span>Watch Video</span></button>
+
+                                <div class="video-container-inner">
+                                    <button role="button" class="btn btn-outline btn-circle btn-close">
+                                        <i class="fa fa-close fa-2x"></i>
+                                        <i class="sr-only">Close preview</i>
+                                    </button>
+                                    <video id="video-content" class="video-content animated hidden" preload loop controls style="width: 100%">
+                                        WCAG general accessibility recommendation is that media such as background video play through only once. Loop turned on for the purposes of illustration; if removed, the end of the video will fade in the same way created by pressing the "Pause" button
                                         <source src="<?php echo $homepage_video_url; ?>" type="video/mp4">
                                     </video>
-                                </a>
+                                </div>
+
+                                <!-- <a href="#" class="btn-video btn-play play-icon"> -->
+                                <!-- </a> -->
                             </div>
+
                         </div>
                     </div>
                     <?php

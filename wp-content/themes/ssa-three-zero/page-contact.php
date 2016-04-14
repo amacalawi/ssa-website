@@ -166,7 +166,8 @@
             <div class="row">
                 <div class="col-sm-offset-3 col-sm-7 inside2">
                     <div class="row">
-                        <form class="commenting">
+                        <?php echo do_shortcode('[mail_form form_class="commenting" label_class="sr-only"]') ?>
+                        <!-- <form class="commenting">
                             <div class="form-group">
                                     <input type="text" class="form-control input-lg" placeholder="Name">
                             </div>
@@ -177,7 +178,7 @@
                                     <textarea class="form-control input-lg" rows="5" placeholder="Message"></textarea>
                             </div>
                             <button type="submit">Submit</button>
-                        </form>
+                        </form> -->
                     </div>
                 </div>
             </div>

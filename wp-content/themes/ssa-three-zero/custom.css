@@ -1109,7 +1109,8 @@ section.related-post p {
 
 
 /* form comments start */
-form.commenting input[type="text"] {
+form.commenting input[type="text"],
+form.commenting input[type="email"] {
     border: 1px solid #e0e0e0 ;
     padding: 20px 20px;
     color: #5a5a5a;
@@ -1122,6 +1123,7 @@ form.commenting textarea {
     margin: 0;
 }
 form.commenting input[type="text"]:focus,
+form.commenting input[type="email"]:focus,
 form.commenting textarea:focus {
     border: 1px solid #5a5a5a !important;
     transition: .2s all ease-in-out;
@@ -1129,8 +1131,10 @@ form.commenting textarea:focus {
 form.commenting .form-group{
     margin-bottom: 25px;
 }
-form.commenting button,
-form.commenting input[type=submit] {
+form.commenting button[type=submit],
+form.commenting button[type=reset],
+form.commenting input[type=submit],
+form.commenting input[type=reset] {
     border: 1px solid #e0e0e0;
     padding: 8px 70px !important;
     margin-bottom: 50px;
@@ -2080,7 +2084,7 @@ section.executives .info .col-sm-8 {
 section.executives .border-right-straight {
     position: absolute;
     border-right: 1px solid #c2c2c2;
-    top: -93px;
+    top: -96px;
     right: -50px;
     z-index: 4;
     height: 867px;
@@ -2188,7 +2192,7 @@ section.values .border-right-straight {
 @media (min-width: 1367px) {
     section.values .border-right-straight {
         right: -50px;
-        top: -96px;
+        top: -99px;
     }
     section.values .info .col-sm-8 {
     padding-left: 10px;

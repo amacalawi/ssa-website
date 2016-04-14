@@ -29,7 +29,6 @@ function add_favicon() { ?>
     <meta name="msapplication-TileColor" content="#da532c">
     <meta name="msapplication-TileImage" content="<?php echo bloginfo('url') ?>/mstile-144x144.png">
     <meta name="theme-color" content="#ffffff">
-
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
     <!--[if lt IE 9]>
@@ -1262,4 +1261,37 @@ function slugify($string, $case='lower', $replacements=[], $delimiter="-", $spac
             break;
     }
     return trim( $slug );
+}
+
+//1. Add a new form element...
+add_action( 'register_form', 'myplugin_register_form' );
+function myplugin_register_form() {
+
+    $first_name = ( ! empty( $_POST['first_name'] ) ) ? trim( $_POST['first_name'] ) : '';
+
+    ?>
+    <p>
+        <label for="first_name"><?php _e( 'First Name', 'mydomain' ) ?><br />
+            <input type="text" name="first_name" id="first_name" class="input" value="<?php echo esc_attr( wp_unslash( $first_name ) ); ?>" size="25" /></label>
+    </p>
+    <?php
+}
+
+//2. Add validation. In this case, we make sure first_name is required.
+add_filter( 'registration_errors', 'myplugin_registration_errors', 10, 3 );
+function myplugin_registration_errors( $errors, $sanitized_user_login, $user_email ) {
+
+    if ( empty( $_POST['first_name'] ) || ! empty( $_POST['first_name'] ) && trim( $_POST['first_name'] ) == '' ) {
+        $errors->add( 'first_name_error', __( '<strong>ERROR</strong>: You must include a first name.', 'mydomain' ) );
+    }
+
+    return $errors;
+}
+
+//3. Finally, save our extra registration user meta.
+add_action( 'user_register', 'myplugin_user_register' );
+function myplugin_user_register( $user_id ) {
+    if ( ! empty( $_POST['first_name'] ) ) {
+        update_user_meta( $user_id, 'first_name', trim( $_POST['first_name'] ) );
+    }
 }
