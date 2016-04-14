@@ -462,7 +462,7 @@ function wp_bootstrap_remove_more_jump_link( $link ) {
 	if ( $offset ) {
 		$end = strpos( $link, '"',$offset );
 	}
-	if ( $end ) {
+	if ( isset($end) && $end ) {
 		$link = substr_replace( $link, '', $offset, $end-$offset );
 	}
 	return $link;
@@ -1088,10 +1088,10 @@ function ssaThreeZeroExtensionTinyMCE($init) {
 
 add_filter('tiny_mce_before_init', 'ssaThreeZeroExtensionTinyMCE' );
 
-function get_the_post_thumbnail_url_raw()
+function get_the_post_thumbnail_url_raw($id=null)
 {
     global $post;
-    return wp_get_attachment_url( get_post_thumbnail_id($post->ID) );
+    return wp_get_attachment_url( get_post_thumbnail_id($id != null ? $id :$post->ID) );
 }
 
 // Add Categories to Pages
@@ -1131,8 +1131,7 @@ function get_pagination_bar($q) {
 }
 
 function add_custom_class_on_nav_menu($classes=array(), $menu_item=false) {
-    if ( !is_page() && 'Blog' == $menu_item->title &&
-            !in_array( 'current-menu-item', $classes ) ) {
+    if ( 'Blog' == $menu_item->title && in_array( 'current-menu-item', $classes ) ) {
         $classes[] = 'current-menu-item active';
     }
     return $classes;
