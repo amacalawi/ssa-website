@@ -921,13 +921,13 @@ if( !function_exists( "wp_bootstrap_theme_js" ) ) {
 
 
     wp_enqueue_script( 'jquery-version-2.1.1' );
-    wp_enqueue_script( 'jquery-nicescroll' );
     wp_enqueue_script( 'jquery-easing' );
     wp_enqueue_script( 'jquery-mousewheel' );
     wp_enqueue_script( 'bootstrap' );
     wp_enqueue_script( 'modernizr' );
     wp_enqueue_script( 'owl-carousel' );
     wp_enqueue_script( 'waves' );
+    wp_enqueue_script( 'jquery-nicescroll' );
     if( is_page('contact-us') || is_page('contact') ) {
       wp_enqueue_script( 'gmap-api' );
       wp_enqueue_script( 'gmaps' );
