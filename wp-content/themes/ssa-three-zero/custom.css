@@ -378,7 +378,7 @@ footer {
 }
 footer .inner {
     margin-top: -70px;
-    margin-bottom: 80px;
+    /*margin-bottom: 80px;*/
 }
 footer form .btn {
     background: transparent;
@@ -1134,7 +1134,9 @@ form.commenting .form-group{
 form.commenting button[type=submit],
 form.commenting button[type=reset],
 form.commenting input[type=submit],
-form.commenting input[type=reset] {
+form.commenting input[type=reset],
+.ticket-selector-submit-btn,
+.button-primary {
     border: 1px solid #e0e0e0;
     padding: 8px 70px !important;
     margin-bottom: 50px;
@@ -1146,7 +1148,11 @@ form.commenting input[type=reset] {
 form.commenting button:hover,
 form.commenting button:focus,
 form.commenting input[type=submit]:hover,
-form.commenting input[type=submit]:focus {
+form.commenting input[type=submit]:focus,
+.ticket-selector-submit-btn:hover,
+.ticket-selector-submit-btn:focus,
+.button-primary:hover,
+.button-primary:focus {
     border: 1px solid #5a5a5a;
     color: #5a5a5a;
     transition: .2s all ease-in-out;
@@ -1331,7 +1337,8 @@ section.contact-us-content .commenting {
 
 /* events start */
 section.events_banner,
-section.event_banner {
+section.event_banner,
+section.espresso_events_banner {
     width: 100%;
     padding: 0;
     background: url(../img/training_bg.jpg);
@@ -1345,8 +1352,14 @@ section.event_banner {
         min-height: 480px;
     }
 }
+@media (min-width: 768px) {
+    section.espresso_events_banner {
+        min-height: 600px;
+    }
+}
 section.events_banner h1.title,
-section.event_banner h1.title {
+section.event_banner h1.title,
+section.espresso_events_banner h1.title {
     margin-top: 50px;
     font-size: 45px;
     padding: 20px 0;
@@ -1354,7 +1367,8 @@ section.event_banner h1.title {
     line-height: 55px;
 }
 section.events_banner p.subtitle,
-section.event_banner p.subtitle {
+section.event_banner p.subtitle,
+section.espresso_events_banner p.subtitle {
     font-size: 22px;
     font-weight: normal;
 }
@@ -1363,7 +1377,8 @@ section.event_banner p.subtitle {
 
 /* event banner start */
 .event_inner_banner,
-section.event_banner {
+section.event_banner,
+section.espresso_events_banner {
     width: 100%;
     padding: 0;
     background: url(../img/event-sample.jpg);
@@ -1372,7 +1387,8 @@ section.event_banner {
     background-attachment: fixed;
 }
 .event_inner_banner .bouncing_arrow,
-section.event_banner .bouncing_arrow {
+section.event_banner .bouncing_arrow,
+section.espresso_events_banner .bouncing_arrow {
     position: absolute;
     bottom: 130px;
     left: 50%;
@@ -1386,6 +1402,7 @@ section.event_banner .bouncing_arrow {
 @media (min-width: 768px) {
     .event_inner_banner,
     section.event_banner,
+    section.espresso_events_banner
     .page-template-page-single-event section#banner {
         min-height: 768px;
     }
@@ -2401,3 +2418,26 @@ section.milestones ul.timeline > li {
 }
 /* timeline end */
 
+.espresso-event-wrapper-dv section {
+    padding-top: 1em;
+    padding-bottom: 1em;
+}
+.ee-ical-sbmt {
+    border: 1px solid #757575;
+    background-color: transparent;
+}
+.ee-event-datetimes-ul {
+    list-style-type: none;
+}
+section.espresso_events_banner .event-datetimes {
+    color: #ffffff;
+}
+section.espresso_events_banner .event-datetimes ul {
+    padding-left: 0;
+}
+.ee-event-datetimes-li br {
+    display: none;
+}
+.ee-event-datetimes-li span:not(:first-child) {
+    margin-left: 2em;
+}

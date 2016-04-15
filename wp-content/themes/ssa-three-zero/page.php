@@ -2,7 +2,8 @@
 
 <?php
 $bg = get_post_meta( get_the_ID(), 'custom_bg', TRUE );
-$tagline = get_post_meta( get_the_ID(), 'custom_tagline', TRUE ); ?>
+$tagline = get_post_meta( get_the_ID(), 'custom_tagline', TRUE );
+$subheading = get_post_meta( get_the_ID(), 'custompageSubheading', TRUE ); ?>
     <div class="overlay-pattern"></div>
     <div class="col-sm-offset-4 col-sm-8">
         <div class="row">
@@ -14,7 +15,7 @@ $tagline = get_post_meta( get_the_ID(), 'custom_tagline', TRUE ); ?>
                     </strong>
                 </h1>
                 <p class="wcolor subtitle animated flipInX">
-                    Our clients span a variety of industries - food and beverage, finance, engineering, oil and petroleum, and shipping, among others. Have a look at some of them here:
+                    <?php echo $subheading; ?>
                 </p>
                 </div>
             </div>

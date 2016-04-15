@@ -47,7 +47,7 @@
                                         <i class="fa fa-close fa-2x"></i>
                                         <i class="sr-only">Close preview</i>
                                     </button>
-                                    <video id="video-content" class="video-content animated hidden" preload loop controls style="width: 100%">
+                                    <video id="video-content" class="video-content animated hidden" preload loop controls style="width: 100%; height: 90vh;">
                                         WCAG general accessibility recommendation is that media such as background video play through only once. Loop turned on for the purposes of illustration; if removed, the end of the video will fade in the same way created by pressing the "Pause" button
                                         <source src="<?php echo $homepage_video_url; ?>" type="video/mp4">
                                     </video>

@@ -109,10 +109,8 @@ foreach ($children as $post) {
                 <div class="col-sm-7"></div>
                 <div class="col-sm-5">
                     <h1 class="tcolor"><strong><em><?php the_title(); ?></em></strong></h1>
-                    <div class="row">
-                        <div class="col-sm-7 wcolor">
-                            <?php echo do_shortcode($post->post_content); ?>
-                        </div>
+                    <div class="col-sm-7 wcolor">
+                        <?php echo do_shortcode($post->post_content); ?>
                     </div>
                 </div>
             </div>
