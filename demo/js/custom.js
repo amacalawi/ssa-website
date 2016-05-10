@@ -101,7 +101,7 @@ $(function() {
     $('#started').bind('click', function(event) {
         var $anchor = $(this);
         $('html, body').stop().animate({
-            scrollTop: $($anchor.attr('href')).offset().top
+            scrollTop: $($anchor.attr('point')).offset().top
         }, 1500, 'easeInOutExpo');
         event.preventDefault();
     });
@@ -206,4 +206,50 @@ $(function() {
     });
     /* drives ends here */
 
+
+    $('#trigger-overlay').click(function(){
+        setTimeout(function(){ 
+            $('#anniv_video').fadeIn().get(0).play();
+        }, 500);
+    });
+    $(".overlay-close").click(function(){
+        $('#anniv_video').fadeOut();
+        setTimeout(function(){ 
+            
+            var video = document.getElementById('anniv_video');
+                video.pause();
+                video.currentTime = 0;
+                video.load();
+        }, 500);
+    });
+
+    $("#anniv_video").bind('ended', function(){ 
+      $("#replay_button").fadeIn();
+    });
+    $("#anniv_video").bind('pause', function(){ 
+      $("#play_button").show();
+    });
+    $("#anniv_video").bind('play', function(){ 
+      $("#play_button").hide();
+    });
+    
+    $("#replay_button").click(function(){
+        $(this).fadeOut();
+        setTimeout(function(){            
+            var video = document.getElementById('anniv_video');
+                video.currentTime = 0;
+                video.load();
+                video.play();
+        }, 500);
+    });
+    $("#play_button").click(function(){
+        var video = document.getElementById('anniv_video');
+        video.play();  
+    });
+
+    $('video').click(function(){this.paused?this.play():this.pause();});
+    
 });
+
+
+
