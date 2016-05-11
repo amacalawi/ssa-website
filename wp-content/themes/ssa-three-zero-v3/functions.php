@@ -970,8 +970,8 @@ if( !function_exists( "wp_bootstrap_theme_js" ) ) {
     wp_enqueue_script( 'jquery-simplePagination' );
     wp_enqueue_script( 'cookie' );
     wp_enqueue_script( 'functions' );
-    wp_enqueue_script( 'classie' );
     if( is_page('home') ) {
+        wp_enqueue_script( 'classie' );
         wp_enqueue_script( 'overlay' );
     }
     wp_enqueue_script( 'scripts' );

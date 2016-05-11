@@ -93,6 +93,10 @@ footer a:hover, footer a:focus, footer a:active {
 [data-bg=""]:before {
     background: transparent;
 }
+.event_inner_banner.bg:before {
+    content: "";
+    background: rgba(0,0,0,.5);
+}
 
 
 /*Sections*/
@@ -221,4 +225,71 @@ section.values,
 .gallery img,
 div[id*="gallery-"] .gallery-item img {
     border: none !important;
+}
+
+.events_content {
+    z-index: 2;
+}
+
+section.event_content .col-sm-4 {
+    height: 240px;
+}
+
+.ee-event-datetimes-ul {
+    padding-left: 0;
+    list-style: none;
+    font-size: 22px;
+    font-weight: normal;
+    margin: 0;
+    color: #ffffff;
+}
+.ee-event-datetimes-ul li br {
+    display: none;
+}
+.ee-event-datetimes-ul li .dashicons:nth-child(2),
+.ee-event-datetimes-ul li .dashicons-clock {
+    padding-left: 1em;
+}
+.download-iCal-frm {
+    display: none;
+}
+
+section.event_inner_banner .desc {
+    margin-bottom: 1em;
+}
+section.event_inner_banner .desc a {
+    border-radius: 50%;
+    margin-left: 10px;
+    background: #ffbf3d;
+    font-size: 17px;
+    width: 32px;
+    color: #333;
+    text-align: center;
+}
+section.event_inner_banner .desc .event-datetimes {
+    float: left;
+}
+
+.espresso-event-wrapper-dv section {
+    padding-top: 1em;
+    padding-bottom: 1em;
+}
+.ee-ical-sbmt {
+    border: 1px solid #757575;
+    background-color: transparent;
+}
+.ee-event-datetimes-ul {
+    list-style-type: none;
+}
+section.espresso_events_banner .event-datetimes {
+    color: #ffffff;
+}
+section.espresso_events_banner .event-datetimes ul {
+    padding-left: 0;
+}
+.ee-event-datetimes-li br {
+    display: none;
+}
+.ee-event-datetimes-li span:not(:first-child) {
+    margin-left: 2em;
 }
