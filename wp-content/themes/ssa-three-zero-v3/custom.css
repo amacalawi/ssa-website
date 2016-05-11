@@ -549,14 +549,13 @@ footer #back-to-top span {
 section.services_banner {
 	width: 100%;
 	padding: 0;
-	background: url(../img/training_bg.png);
 	background-repeat: no-repeat;
 	background-size: cover;
 	background-attachment: fixed;
 }
 @media (min-width: 768px) {
 	section.services_banner {
-		min-height: 1024px;
+		min-height: 1066px;
 	}
 }
 
