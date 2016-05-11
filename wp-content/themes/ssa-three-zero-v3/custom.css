@@ -15,7 +15,7 @@ body {
 	color: #333;
 	font-weight: normal;
 	    line-height: 30px;
-	font-family: 'lato_reg';
+	font-family: 'lato_reg', 'Calibri', helvetica, sans-serif;
 }
 html, body {
 	height: 100%;
@@ -32,7 +32,7 @@ h3,
 h4,
 h5,
 h6 {
-	font-family: 'lato_black';
+	font-family: 'lato_black', 'Arial Black', helvetica, sans-serif;
 	margin: 0;
 }
 .panel-disabled {

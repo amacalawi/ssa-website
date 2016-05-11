@@ -217,3 +217,8 @@ section.values,
     text-align: center;
     box-shadow: none;
 }
+
+.gallery img,
+div[id*="gallery-"] .gallery-item img {
+    border: none !important;
+}
