@@ -1,0 +1,118 @@
+body {
+	padding: 0;
+	margin: 0;
+}
+html, body {
+	height: 100%;
+	font-size: 17px;
+}
+section {
+	width: 100%;
+	padding: 90px 0;
+}
+
+
+/* homepage banner start */
+section#homepage_banner {
+	background-size: cover;
+	width: 100%;
+	padding: 40px 0;
+}
+section#homepage_banner .video img {
+	width: 100%;
+	height: 100%;
+	position: absolute;
+	left: 0;
+	top: 0;
+}
+section#homepage_banner .homepage_overlay {
+	width: 100%;
+	height: 100%;
+	position: absolute;
+	left: 0;
+	top: 0;
+	background: url(img/homepage_overlay.png);
+	background-repeat: no-repeat;
+	background-size: 100% 100%;
+}
+@media (min-width: 768px) {
+	section#homepage_banner {
+		min-height: 100%;
+	}
+}
+.navbar-brand {
+	position: relative;
+}
+.navbar-brand img {
+	position: absolute;
+	max-width: 180px;
+	margin-top: -20px;
+}
+.navbar-default {
+	background: transparent;
+	border: 0;
+	z-index: 99999;
+}
+.navbar-default .navbar-nav > .active > a,
+.navbar-default .navbar-nav > .active > a:hover,
+.navbar-default .navbar-nav > .active > a:focus {
+	color: #ffbf3d;
+    background-color: transparent;
+}
+.navbar-default .navbar-nav > li > a {
+	color: #fff;
+	text-transform: uppercase;
+	transition: .4s all ease-in-out;
+}
+.navbar-default .navbar-nav > li > a:hover {
+	color: #ffbf3d;
+	transition: .2s all ease-in-out;
+}
+section#homepage_banner .anniversary_logo {
+	position: relative;
+	width: 100%;
+	max-width: 1170px;
+	margin: auto;
+	margin-top: -5%;
+}
+section#homepage_banner .anniversary_logo img {
+	width: 200px;
+	position: absolute;
+	bottom: 0;
+	right: 0;
+}
+#pointers1 {
+	position: absolute;	top: 140px;	left: 585px; height: 14px; width: 12px;
+}
+#pointers2 {
+	position: absolute;	top: 298px;	left: 385px; height: 14px; width: 12px;
+}
+#pointers3 {
+	position: absolute;top: 298px;left: 575px;height: 14px;width: 12px;
+}
+#pointers4 {
+	position: absolute;top: 345px;left: 575px;height: 14px;width: 12px;
+}
+#pointers5 {
+	position: absolute;top: 345px;left: 825px;height: 14px;width: 12px;
+}
+#pointers6 {
+	position: absolute;top: 563px;left: 825px;height: 14px;width: 12px;
+}
+#pointers7 {
+	position: absolute;top: 230px;left: 952px;height: 14px;width: 12px;
+}
+#pointers8 {
+	position: absolute;top: 230px;left: 699px;height: 14px;width: 12px;
+}
+.hides {
+	display: none;
+}
+.pointers {
+	transition: .6s all ease-in-out;
+}
+.pointers:hover {
+	background: #ffbf3d;
+	transition: .3s all ease-in-out;
+}
+/* homepage banner end */
