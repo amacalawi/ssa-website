@@ -206,3 +206,14 @@ section.values,
 .bg-default {
     background-color: #ffffff;
 }
+
+.know-more {
+    border-radius: 0 !important;
+    font-weight: bold;
+    font-size: 17px;
+    width: 190px;
+    margin-top: 10px;
+    padding: 10px 30px;
+    text-align: center;
+    box-shadow: none;
+}
