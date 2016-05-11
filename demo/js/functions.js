@@ -37,6 +37,15 @@ if( /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(naviga
 }
     
 $(document).ready(function(){
+
+
+    
+
+    
+    
+
+
+
     /*
      * Top Search
      */
@@ -430,9 +439,9 @@ $(document).ready(function(){
     /*
      * Audio and Video
      */
-    if($('audio, video')[0]) {
+    /*(if($('audio, video')[0]) {
         $('video,audio').mediaelementplayer();
-    }
+    }*/
     
     /*
      * Tag Select
