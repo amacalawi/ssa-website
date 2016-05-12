@@ -1,4 +1,10 @@
 <?php
+/**
+ * Template Name: Blog Page Template
+ */
+
+get_header(); ?>
+<?php
 $bg = get_post_meta( get_the_ID(), 'custom_bg', TRUE );
 $tagline = get_post_meta( get_the_ID(), 'custom_tagline', TRUE ); ?>
 <section id="banner" class="blogs_banner banner bg" data-bg="<?php echo get_the_post_thumbnail_url_raw() ?>">

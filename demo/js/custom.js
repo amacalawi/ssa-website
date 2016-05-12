@@ -208,14 +208,23 @@ $(function() {
 
 
     $('#trigger-overlay').click(function(){
+<<<<<<< HEAD
         setTimeout(function(){
+=======
+        setTimeout(function(){ 
+>>>>>>> 580f99df8172d1e20449c37652b533570e9d2464
             $('#anniv_video').fadeIn().get(0).play();
         }, 500);
     });
     $(".overlay-close").click(function(){
         $('#anniv_video').fadeOut();
+<<<<<<< HEAD
         setTimeout(function(){
 
+=======
+        setTimeout(function(){ 
+            
+>>>>>>> 580f99df8172d1e20449c37652b533570e9d2464
             var video = document.getElementById('anniv_video');
                 video.pause();
                 video.currentTime = 0;
@@ -223,6 +232,7 @@ $(function() {
         }, 500);
     });
 
+<<<<<<< HEAD
     $("#anniv_video").bind('ended', function(){
       $("#replay_button").fadeIn();
     });
@@ -236,6 +246,21 @@ $(function() {
     $("#replay_button").click(function(){
         $(this).fadeOut();
         setTimeout(function(){
+=======
+    $("#anniv_video").bind('ended', function(){ 
+      $("#replay_button").fadeIn();
+    });
+    $("#anniv_video").bind('pause', function(){ 
+      $("#play_button").show();
+    });
+    $("#anniv_video").bind('play', function(){ 
+      $("#play_button").hide();
+    });
+    
+    $("#replay_button").click(function(){
+        $(this).fadeOut();
+        setTimeout(function(){            
+>>>>>>> 580f99df8172d1e20449c37652b533570e9d2464
             var video = document.getElementById('anniv_video');
                 video.currentTime = 0;
                 video.load();
@@ -244,11 +269,19 @@ $(function() {
     });
     $("#play_button").click(function(){
         var video = document.getElementById('anniv_video');
+<<<<<<< HEAD
         video.play();
     });
 
     $('video').click(function(){this.paused?this.play():this.pause();});
 
+=======
+        video.play();  
+    });
+
+    $('video').click(function(){this.paused?this.play():this.pause();});
+    
+>>>>>>> 580f99df8172d1e20449c37652b533570e9d2464
 });
 
 
