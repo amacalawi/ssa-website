@@ -209,15 +209,23 @@ $(function() {
 
     $('#trigger-overlay').click(function(){
 <<<<<<< HEAD
+<<<<<<< HEAD
         setTimeout(function(){ 
 =======
         setTimeout(function(){
 >>>>>>> 0126b0ef5ec2096ade5cbb7dcf1e73f6aba031d7
+=======
+        setTimeout(function(){
+=======
+        setTimeout(function(){ 
+>>>>>>> 580f99df8172d1e20449c37652b533570e9d2464
+>>>>>>> 31839685ee216339934be64c168e570ce26d343f
             $('#anniv_video').fadeIn().get(0).play();
         }, 500);
     });
     $(".overlay-close").click(function(){
         $('#anniv_video').fadeOut();
+<<<<<<< HEAD
 <<<<<<< HEAD
         setTimeout(function(){ 
             
@@ -225,6 +233,14 @@ $(function() {
         setTimeout(function(){
 
 >>>>>>> 0126b0ef5ec2096ade5cbb7dcf1e73f6aba031d7
+=======
+        setTimeout(function(){
+
+=======
+        setTimeout(function(){ 
+            
+>>>>>>> 580f99df8172d1e20449c37652b533570e9d2464
+>>>>>>> 31839685ee216339934be64c168e570ce26d343f
             var video = document.getElementById('anniv_video');
                 video.pause();
                 video.currentTime = 0;
@@ -233,7 +249,11 @@ $(function() {
     });
 
 <<<<<<< HEAD
+<<<<<<< HEAD
     $("#anniv_video").bind('ended', function(){ 
+=======
+    $("#anniv_video").bind('ended', function(){
+>>>>>>> 31839685ee216339934be64c168e570ce26d343f
       $("#replay_button").fadeIn();
     });
     $("#anniv_video").bind('pause', function(){ 
@@ -259,8 +279,13 @@ $(function() {
 
     $("#replay_button").click(function(){
         $(this).fadeOut();
+<<<<<<< HEAD
         setTimeout(function(){
 >>>>>>> 0126b0ef5ec2096ade5cbb7dcf1e73f6aba031d7
+=======
+        setTimeout(function(){            
+>>>>>>> 580f99df8172d1e20449c37652b533570e9d2464
+>>>>>>> 31839685ee216339934be64c168e570ce26d343f
             var video = document.getElementById('anniv_video');
                 video.currentTime = 0;
                 video.load();
@@ -270,7 +295,11 @@ $(function() {
     $("#play_button").click(function(){
         var video = document.getElementById('anniv_video');
 <<<<<<< HEAD
+<<<<<<< HEAD
         video.play();  
+=======
+        video.play();
+>>>>>>> 31839685ee216339934be64c168e570ce26d343f
     });
 
     $('video').click(function(){this.paused?this.play():this.pause();});
@@ -280,8 +309,13 @@ $(function() {
     });
 
     $('video').click(function(){this.paused?this.play():this.pause();});
+<<<<<<< HEAD
 
 >>>>>>> 0126b0ef5ec2096ade5cbb7dcf1e73f6aba031d7
+=======
+    
+>>>>>>> 580f99df8172d1e20449c37652b533570e9d2464
+>>>>>>> 31839685ee216339934be64c168e570ce26d343f
 });
 
 
