@@ -36,10 +36,10 @@ $(function() {
           "<i class='fa fa-chevron-right tcolor'></i>",
           ]
     });
-    
+
     owl2.on('changed.owl.carousel', function(property) {
         var current = property.item.index;
-        owl1.trigger('to.owl.carousel', current);      
+        owl1.trigger('to.owl.carousel', current);
     });
 
 
@@ -86,8 +86,8 @@ $(function() {
     owl.on('changed.owl.carousel', function(e) {
         idx = e.item.index;
         var $value = $('.owl-item').eq(idx).find('h4').text();
-        $(".milestone-content .item").css({"display":"none"});       
-        $(".milestone-"+$value).fadeIn();  
+        $(".milestone-content .item").css({"display":"none"});
+        $(".milestone-"+$value).fadeIn();
     });
 
     /* get started script starts here */
@@ -123,7 +123,7 @@ $(function() {
         var headerHeight = jQuery('#banner').outerHeight();
 
         if (position >= headerHeight - 300 ){
-            jQuery('#back-to-top').addClass('moved');     
+            jQuery('#back-to-top').addClass('moved');
         } else {
             jQuery('#back-to-top').removeClass('moved');
         }
@@ -133,7 +133,7 @@ $(function() {
 
     /* blog img transition starts here */
     $( ".blog-holder" )
-        .mouseenter(function() {             
+        .mouseenter(function() {
         $( this ).find( "p" ).removeClass("zoomOut").addClass("bounceIn display");
     })
         .mouseleave(function() {
@@ -165,7 +165,7 @@ $(function() {
             //   in this next function. It runs on
             //   the event that a user changes page
             onPageClick: function(pageNum) {
-                
+
                 $("body").append('<div class="panel-disabled"><i class="ion-loading-c"></i></div>');
                 var $pd = $("body").find('.panel-disabled');
                 // Which page parts do we show?
@@ -174,7 +174,7 @@ $(function() {
 
                 // First hide all page parts
                 // Then show those just for our page
-                
+
                 setTimeout(function () {
                     $pd.fadeOut('fast', function () {
                         $pd.remove();
@@ -184,13 +184,13 @@ $(function() {
                 }, 500 + 300 * (Math.random() * 5));
 
 
-                
+
             }
         });
     });
     /* paginates ends here */
 
-    /* drives starts here */ 
+    /* drives starts here */
     $('.drives a').bind('click', function(event) {
         var $anchor = $(this).attr('href');
         var $content_drives = $(".drives-content");
@@ -198,7 +198,7 @@ $(function() {
 
         $content_list.removeClass("active").find("em").removeClass("fadeInRight animated").next().removeClass("fadeInRight animated");;
         $(this).parent().addClass("active").find("em").addClass("fadeInRight animated").next().addClass("fadeInRight animated");
-        
+
         $($content_drives).css({"display":"none"});
         $($anchor).fadeIn("fast");
 
@@ -208,14 +208,23 @@ $(function() {
 
 
     $('#trigger-overlay').click(function(){
+<<<<<<< HEAD
         setTimeout(function(){ 
+=======
+        setTimeout(function(){
+>>>>>>> 0126b0ef5ec2096ade5cbb7dcf1e73f6aba031d7
             $('#anniv_video').fadeIn().get(0).play();
         }, 500);
     });
     $(".overlay-close").click(function(){
         $('#anniv_video').fadeOut();
+<<<<<<< HEAD
         setTimeout(function(){ 
             
+=======
+        setTimeout(function(){
+
+>>>>>>> 0126b0ef5ec2096ade5cbb7dcf1e73f6aba031d7
             var video = document.getElementById('anniv_video');
                 video.pause();
                 video.currentTime = 0;
@@ -223,6 +232,7 @@ $(function() {
         }, 500);
     });
 
+<<<<<<< HEAD
     $("#anniv_video").bind('ended', function(){ 
       $("#replay_button").fadeIn();
     });
@@ -236,6 +246,21 @@ $(function() {
     $("#replay_button").click(function(){
         $(this).fadeOut();
         setTimeout(function(){            
+=======
+    $("#anniv_video").bind('ended', function(){
+      $("#replay_button").fadeIn();
+    });
+    $("#anniv_video").bind('pause', function(){
+      $("#play_button").show();
+    });
+    $("#anniv_video").bind('play', function(){
+      $("#play_button").hide();
+    });
+
+    $("#replay_button").click(function(){
+        $(this).fadeOut();
+        setTimeout(function(){
+>>>>>>> 0126b0ef5ec2096ade5cbb7dcf1e73f6aba031d7
             var video = document.getElementById('anniv_video');
                 video.currentTime = 0;
                 video.load();
@@ -244,11 +269,19 @@ $(function() {
     });
     $("#play_button").click(function(){
         var video = document.getElementById('anniv_video');
+<<<<<<< HEAD
         video.play();  
     });
 
     $('video').click(function(){this.paused?this.play():this.pause();});
     
+=======
+        video.play();
+    });
+
+    $('video').click(function(){this.paused?this.play():this.pause();});
+
+>>>>>>> 0126b0ef5ec2096ade5cbb7dcf1e73f6aba031d7
 });
 
 

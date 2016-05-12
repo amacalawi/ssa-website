@@ -1,0 +1,196 @@
+@font-face {
+    font-family: 'lato_black';
+    src: local('lato'), url('fonts/lato/Lato-Black.ttf') format('truetype');
+}
+@font-face {
+    font-family: 'lato_reg';
+    src: local('lato'), url('fonts/lato/Lato-Regular.ttf') format('truetype');
+}
+html, body {
+    min-height: 100%;
+}
+html {
+    font-size: 17px;
+}
+body {
+    background: #ffffff;
+    font-size: 100%;
+    font-family: 'lato_reg';
+    padding: 0;
+    margin: 0;
+    overflow-x: hidden;
+}
+h1, h2, h3, h4, h5, h6 {
+    font-family: 'lato_black';
+    margin: 0;
+}
+a {
+    color: #9d9d9d;
+}
+footer a:hover, footer a:focus, footer a:active {
+    color: #3e3e3e;
+    text-decoration: none;
+    border-bottom: 1px dashed #3e3e3e;
+}
+.wcolor {
+    color: #ffffff;
+}
+
+.tcolor {
+    color: #ffbf3d;
+}
+
+.navbar {
+    z-index: 9999;
+}
+.navbar-transparent {
+    background-color: transparent;
+    border: none;
+    font-weight: normal;
+    padding: 2.5rem 0;
+}
+.navbar-transparent .navbar-nav > li > a {
+    color: #ffffff;
+}
+.navbar-transparent .navbar-nav > li > a:hover,
+.navbar-transparent .navbar-nav > li > a:focus,
+.navbar-transparent .navbar-nav > li > a:active {
+    color: #ffbf3d;
+}
+.header-absolute-top {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+}
+.header-absolute-top + section:first-of-type {
+    padding-top: 15rem !important;
+}
+
+.navbar-brand {
+    height: auto;
+    padding: 0 0.9375rem;
+}
+.navbar-brand img {
+    max-width: 180px;
+    height: auto;
+}
+
+.bg, [data-bg] {
+    background-repeat: no-repeat;
+    -webkit-background-size: cover;
+    background-size: cover;
+}
+.bg:before, [data-bg]:before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,.2);
+}
+
+
+/*Sections*/
+.section:after {
+    content: "";
+    position: absolute;
+    right: 0;
+    bottom: -110px;
+    overflow: visible;
+    width: 100%;
+    height: 200px;
+    background: #fff;
+    z-index: 1;
+    -webkit-transform: skewY(-5deg);
+    -moz-transform: skewY(-5deg);
+    -ms-transform: skewY(-5deg);
+    -o-transform: skewY(-5deg);
+    transform: skewY(-5deg);
+    -webkit-backface-visibility: hidden;
+    backface-visibility: initial;
+}
+
+.child-section {
+    background-color: #ffffff;
+    padding: 90px 0;
+    position: relative;
+    width: 100%;
+    z-index: 2;
+}
+
+.child-section .title {
+    font-size: 64px;
+    padding: 0px 0 30px 0;
+    line-height: 64px;
+    font-style: italic;
+}
+
+.child-section .desc {
+    font-size: 22px;
+    width: 80%;
+    margin-top: 25px;
+    font-weight: normal;
+    margin-bottom: 0;
+}
+
+.child-section .border {
+    border-bottom: 1px solid #e0e0e0;
+}
+
+@media (min-width: 768px) {
+    .main-section {
+        min-height: 768px;
+    }
+}
+
+.btn-default-outline, button, a[role=button] {
+    margin-top: 35px;
+    font-weight: bold;
+    border: 1px solid #e0e0e0;
+    background: transparent;
+    box-shadow: none !important;
+    font-size: 17px;
+    width: 190px;
+    padding: 15px 30px;
+    text-align: center;
+    border-radius: 6px;
+    color: #333;
+    font-weight: bold;
+    box-shadow: none;
+
+    -webkit-transition: all 0.02s ease-out;
+    -o-transition: all 0.02s ease-out;
+    transition: all 0.02s ease-out;
+}
+.btn-default-outline:hover,
+button:hover,
+a[role=button]:hover,
+.btn-default-outline:focus,
+button:focus,
+a[role=button]:focus {
+    background-color: #ffffff;
+    color: #ffbf3d;
+}
+.btn.wcolor {
+    color: #ffffff;
+}
+
+.btn-primary-outline {
+    background-color: #ffbf3d !important;
+    border-color: #ffbf3d !important;
+}
+.btn-primary-outline:hover,
+.btn-primary-outline:focus {
+    background-color: transparent !important;
+    color: #ffbf3d !important;
+}
+
+.newsletter-form button {
+    margin-top: 0;
+}
+
+button#mc-embedded-subscribe {
+    width: 260px;
+}
