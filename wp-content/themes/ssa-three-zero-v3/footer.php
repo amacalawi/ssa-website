@@ -80,17 +80,10 @@
             </div>
         </div>
 
-        <!-- <div id="widget-footer" class="row">
-            <?php if ( !function_exists('dynamic_sidebar') || !dynamic_sidebar('footer1') ) : ?>
-            <?php endif; ?>
-            <?php if ( !function_exists('dynamic_sidebar') || !dynamic_sidebar('footer2') ) : ?>
-            <?php endif; ?>
-            <?php if ( !function_exists('dynamic_sidebar') || !dynamic_sidebar('footer3') ) : ?>
-            <?php endif; ?>
-        </div> -->
-        <a href="#banner" class="btn waves-effect" title="back to top" id="back-to-top">
+        <a id="back-to-top" href="#banner" class="btn" title="Back to top">
             <i class="zmdi zmdi-chevron-up"></i>
         </a>
+
     </footer>
 
 	<?php wp_footer(); // js scripts are inserted using this function ?>

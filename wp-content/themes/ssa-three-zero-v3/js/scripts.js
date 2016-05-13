@@ -1,9 +1,10 @@
 jQuery(document).ready(function ($) {
+
     jQuery('.bg, [data-bg]').each(function (i) {
         jQuery(this).css({'background-image': 'url('+jQuery(this).data('bg')+')'});
     });
 
-    $(function() {
+    (function() {
         /* testimonial script starts here */
         $('.owl-carousel').owlCarousel({
             autoHeight:true,
@@ -91,13 +92,6 @@ jQuery(document).ready(function ($) {
         });
 
         /* get started script starts here */
-        $('#back-to-top').bind('click', function(event) {
-            var $anchor = $(this);
-            $('body, html').stop().animate({
-                scrollTop: $($anchor.attr('href')).offset().top
-            }, 1500, 'easeInOutExpo');
-            event.preventDefault();
-        });
         $('#started').bind('click', function(event) {
             var $anchor = $(this);
             $('html, body').stop().animate({
@@ -117,10 +111,18 @@ jQuery(document).ready(function ($) {
         });
         /* arrow navigation ends here */
 
+        $('#back-to-top').bind('click', function(event) {
+            var $anchor = $(this);
+            $('body, html').stop().animate({
+                scrollTop: $($anchor.attr('href')).offset().top
+            }, 1500, 'easeInOutExpo');
+            event.preventDefault();
+        });
         /* nav transition starts here */
         jQuery(document).scroll(function () {
             var position = jQuery(document).scrollTop();
             var headerHeight = jQuery('#banner').outerHeight();
+            console.log("scroll:", position, "height:", headerHeight);
 
             if (position >= headerHeight - 300 ){
                 jQuery('#back-to-top').addClass('moved');
@@ -250,4 +252,4 @@ jQuery(document).ready(function ($) {
 
     });
 
-})
+});

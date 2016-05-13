@@ -18,7 +18,6 @@ body {
     font-family: 'lato_reg';
     padding: 0;
     margin: 0;
-    overflow-x: hidden;
 }
 h1, h2, h3, h4, h5, h6 {
     font-family: 'lato_black';
@@ -602,4 +601,195 @@ section.career-content .col-sm-8 .panel-title, section.career-content .col-sm-8 
     font-size: 17px;
     padding: 3px 0;
     transition: .4s all ease-in-out;
+}
+
+.contact_us_banner {
+    background-color: #eeeeee;
+}
+
+/* contact us start */
+section.contact_us_banner {
+    width: 100%;
+    padding: 0;
+}
+section.contact_us_banner #map{
+    width: 100%;
+    position: absolute;
+    display: block;
+    left: 0;
+    top: 0;
+}
+section.contact_us_banner .map-layer{
+    position: relative;
+    padding-top: 0;
+}
+@media (min-width: 768px) {
+    section.contact_us_banner {
+        min-height: 768px;
+    }
+    section.contact_us_banner #map {
+        min-height: 768px;
+    }
+}
+
+section.contact_us_banner .address-holder {
+    margin-top: 100px;
+}
+section.contact_us_banner .tab-nav > li > a {
+    font-size: 28px;
+    font-style: italic;
+    font-family: 'lato_black';
+    color: rgba(255,191,61,0.5);
+    text-transform: none;
+}
+section.contact_us_banner .tab-nav > li.active > a {
+    font-size: 48px;
+    color: rgba(255,191,61,1);
+}
+section.contact_us_banner .tab-nav:not([data-tab-color]) > li > a:after {
+    background: #ffbf3d;
+}
+section.contact_us_banner .tabz-hq ul{
+    list-style: none;
+    color: #fff;
+    padding-left: 15px;
+    margin-bottom: -15px;
+}
+section.contact_us_banner .nav-tabs {
+    border: transparent;
+    margin-top: -10px;
+}
+
+section.contact_us_banner .nav-tabs > li,
+section.contact_us_banner .nav-tabs > li > a {
+    padding: 0;
+    margin: 0;
+    margin-right: 20px;
+    font-size: 22px;
+    color: #fff;
+    text-transform: uppercase;
+}
+section.contact_us_banner .nav-tabs > li.active > a,
+section.contact_us_banner .nav-tabs > li.active > a:hover,
+section.contact_us_banner .nav-tabs > li.active > a:focus {
+    color: #ffbf3d;
+    border: 1px solid transparent !important;
+    background: transparent;
+}
+section.contact_us_banner .nav-tabs > li > a:hover {
+    background: transparent;
+    border: 1px solid transparent !important;
+}
+section.contact_us_banner .tabz-hq div[role="tabpanel"]:nth-child(2),
+section.contact_us_banner div[role="tabpanel"]:nth-child(2) {
+    padding-left: 213px;
+}
+section.contact_us_banner .tabz-hq div[role="tabpanel"]:nth-child(3),
+section.contact_us_banner div[role="tabpanel"]:nth-child(3) {
+    padding-left: 338px;
+}
+section.contact_us_banner .tabz-hq div[role="tabpanel"]:nth-child(1) .tab-content,
+section.contact_us_banner .tabz-hq div[role="tabpanel"]:nth-child(2) .tab-content,
+section.contact_us_banner .tabz-hq div[role="tabpanel"]:nth-child(3) .tab-content,
+section.contact_us_banner div[role="tabpanel"]:nth-child(1) .tab-content,
+section.contact_us_banner div[role="tabpanel"]:nth-child(2) .tab-content,
+section.contact_us_banner div[role="tabpanel"]:nth-child(3) .tab-content {
+    padding-left: 15px;
+    margin-top: 0;
+    font-size: 18px;
+}
+section.contact_us_banner .tabz-hq div[role="tabpanel"]:nth-child(1) li,
+section.contact_us_banner .tabz-hq div[role="tabpanel"]:nth-child(2) .tab-content li,
+section.contact_us_banner .tabz-hq div[role="tabpanel"]:nth-child(3) .tab-content li,
+section.contact_us_banner div[role="tabpanel"]:nth-child(1) li,
+section.contact_us_banner div[role="tabpanel"]:nth-child(2) .tab-content li,
+section.contact_us_banner div[role="tabpanel"]:nth-child(3) .tab-content li {
+    list-style: none;
+    font-size: 18px;
+}
+div[role="tabpanel"] ul {
+    padding-left: 0;
+}
+/* contact us end */
+
+/* contact us content */
+section.contact-us-content {
+    padding: 90px 0 40px 0;
+}
+section.contact-us-content .inside1 {
+    z-index: 2;
+    margin-top: -70px;
+}
+section.contact-us-content .inside1 p {
+    font-size: 18px;
+    color: #757575;
+    padding-left: 9px;
+    line-height: 24px;
+    margin: 0;
+}
+section.contact-us-content .inside1 h1 {
+    font-size: 48px;
+    margin-top: 0;
+    padding: 0;
+    color: #333;
+    margin-bottom: 20px;
+}
+section.contact-us-content .divider-bottom {
+    position: absolute;
+    border-bottom: 1px solid #e0e0e0;
+    margin-top: 30px;
+    width: 100%;
+    margin-bottom: 30px;
+    z-index: 2;
+}
+section.contact-us-content .inside2 {
+    padding: 0 25px;
+}
+section.contact-us-content .commenting {
+    margin-top: 65px;
+}
+.arrow-straight2 {
+    top: -153px;
+}
+
+#mailman_email-form button {
+    margin-top: 0;
+}
+
+#mailman_email-form .form-control {
+    border: 1px solid #e0e0e0;
+    padding: 0 15px;
+}
+#mailman_email-form .form-control:focus {
+    border: 1px solid #5a5a5a;
+}
+.ladda-button.progress-button:hover,
+.ladda-button.progress-button:focus,
+.ladda-button.progress-button:active {
+    background-color: #ffffff;
+}
+
+.contact-us-content .arrow-straight2 {
+    height: 791px;
+}
+/* contact us content */
+
+section.contact_us_banner #map {
+    margin-top: -180px;
+}
+
+#back-to-top {
+    bottom: -40px;
+    right: 40px;
+    z-index: 99999;
+}
+#back-to-top.moved {
+    bottom: 40px;
+}
+
+/*fail*/
+.single-post #menu-item-75 a,
+.single-espresso_events #menu-item-321 a {
+    color: #ffbf3d;
+    border-bottom: 2px solid #ffbf3d;
 }

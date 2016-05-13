@@ -1,4 +1,3 @@
-
 /*
 * Layout
 */
@@ -7,22 +6,22 @@
     //Get saved layout type from LocalStorage
     var layoutStatus = localStorage.getItem('ma-layout-status');
     if (layoutStatus == 1) {
-        $('body').addClass('sw-toggled');
-        $('#tw-switch').prop('checked', true);
+        jQuery('body').addClass('sw-toggled');
+        jQuery('#tw-switch').prop('checked', true);
     }
 
-    $('body').on('change', '#toggle-width input:checkbox', function(){
-        if ($(this).is(':checked')) {
+    jQuery('body').on('change', '#toggle-width input:checkbox', function(){
+        if (jQuery(this).is(':checked')) {
             setTimeout(function(){
-                $('body').addClass('toggled sw-toggled');
+                jQuery('body').addClass('toggled sw-toggled');
                 localStorage.setItem('ma-layout-status', 1);
             }, 250);
         }
         else {
             setTimeout(function(){
-                $('body').removeClass('toggled sw-toggled');
+                jQuery('body').removeClass('toggled sw-toggled');
                 localStorage.setItem('ma-layout-status', 0);
-                $('.main-menu > li').removeClass('animated');
+                jQuery('.main-menu > li').removeClass('animated');
             }, 250);
         }
     });
@@ -33,25 +32,25 @@
  * Detact Mobile Browser
  */
 if( /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) ) {
-   $('html').addClass('ismobile');
+   jQuery('html').addClass('ismobile');
 }
 
-jQuery(document).ready(function($){
+jQuery(document).ready(function(jQuery){
     /*
      * Top Search
      */
     (function(){
-        $('body').on('click', '#top-search > a', function(e){
+        jQuery('body').on('click', '#top-search > a', function(e){
             e.preventDefault();
 
-            $('#header').addClass('search-toggled');
-            $('#top-search-wrap input').focus();
+            jQuery('#header').addClass('search-toggled');
+            jQuery('#top-search-wrap input').focus();
         });
 
-        $('body').on('click', '#top-search-close', function(e){
+        jQuery('body').on('click', '#top-search-close', function(e){
             e.preventDefault();
 
-            $('#header').removeClass('search-toggled');
+            jQuery('#header').removeClass('search-toggled');
         });
     })();
 
@@ -60,62 +59,62 @@ jQuery(document).ready(function($){
      */
     (function(){
         //Toggle
-        $('body').on('click', '#menu-trigger, #chat-trigger', function(e){
+        jQuery('body').on('click', '#menu-trigger, #chat-trigger', function(e){
             e.preventDefault();
-            var x = $(this).data('trigger');
+            var x = jQuery(this).data('trigger');
 
-            $(x).toggleClass('toggled');
-            $(this).toggleClass('open');
-            $('body').toggleClass('modal-open');
+            jQuery(x).toggleClass('toggled');
+            jQuery(this).toggleClass('open');
+            jQuery('body').toggleClass('modal-open');
 
     	    //Close opened sub-menus
-    	    $('.sub-menu.toggled').not('.active').each(function(){
-        		$(this).removeClass('toggled');
-        		$(this).find('ul').hide();
+    	    jQuery('.sub-menu.toggled').not('.active').each(function(){
+        		jQuery(this).removeClass('toggled');
+        		jQuery(this).find('ul').hide();
     	    });
 
 
 
-	    $('.profile-menu .main-menu').hide();
+	    jQuery('.profile-menu .main-menu').hide();
 
             if (x == '#sidebar') {
 
-                $elem = '#sidebar';
-                $elem2 = '#menu-trigger';
+                jQueryelem = '#sidebar';
+                jQueryelem2 = '#menu-trigger';
 
-                $('#chat-trigger').removeClass('open');
+                jQuery('#chat-trigger').removeClass('open');
 
-                if (!$('#chat').hasClass('toggled')) {
-                    $('#header').toggleClass('sidebar-toggled');
+                if (!jQuery('#chat').hasClass('toggled')) {
+                    jQuery('#header').toggleClass('sidebar-toggled');
                 }
                 else {
-                    $('#chat').removeClass('toggled');
+                    jQuery('#chat').removeClass('toggled');
                 }
             }
 
             if (x == '#chat') {
-                $elem = '#chat';
-                $elem2 = '#chat-trigger';
+                jQueryelem = '#chat';
+                jQueryelem2 = '#chat-trigger';
 
-                $('#menu-trigger').removeClass('open');
+                jQuery('#menu-trigger').removeClass('open');
 
-                if (!$('#sidebar').hasClass('toggled')) {
-                    $('#header').toggleClass('sidebar-toggled');
+                if (!jQuery('#sidebar').hasClass('toggled')) {
+                    jQuery('#header').toggleClass('sidebar-toggled');
                 }
                 else {
-                    $('#sidebar').removeClass('toggled');
+                    jQuery('#sidebar').removeClass('toggled');
                 }
             }
 
             //When clicking outside
-            if ($('#header').hasClass('sidebar-toggled')) {
-                $(document).on('click', function (e) {
-                    if (($(e.target).closest($elem).length === 0) && ($(e.target).closest($elem2).length === 0)) {
+            if (jQuery('#header').hasClass('sidebar-toggled')) {
+                jQuery(document).on('click', function (e) {
+                    if ((jQuery(e.target).closest(jQueryelem).length === 0) && (jQuery(e.target).closest(jQueryelem2).length === 0)) {
                         setTimeout(function(){
-                            $('body').removeClass('modal-open');
-                            $($elem).removeClass('toggled');
-                            $('#header').removeClass('sidebar-toggled');
-                            $($elem2).removeClass('open');
+                            jQuery('body').removeClass('modal-open');
+                            jQuery(jQueryelem).removeClass('toggled');
+                            jQuery('#header').removeClass('sidebar-toggled');
+                            jQuery(jQueryelem2).removeClass('open');
                         });
                     }
                 });
@@ -123,24 +122,24 @@ jQuery(document).ready(function($){
         })
 
         //Submenu
-        $('body').on('click', '.sub-menu > a', function(e){
+        jQuery('body').on('click', '.sub-menu > a', function(e){
             e.preventDefault();
-            $(this).next().slideToggle(200);
-            $(this).parent().toggleClass('toggled');
+            jQuery(this).next().slideToggle(200);
+            jQuery(this).parent().toggleClass('toggled');
         });
     })();
 
     /*
      * Clear Notification
      */
-    $('body').on('click', '[data-clear="notification"]', function(e){
+    jQuery('body').on('click', '[data-clear="notification"]', function(e){
       e.preventDefault();
 
-      var x = $(this).closest('.listview');
+      var x = jQuery(this).closest('.listview');
       var y = x.find('.lv-item');
       var z = y.size();
 
-      $(this).parent().fadeOut();
+      jQuery(this).parent().fadeOut();
 
       x.find('.list-group').prepend('<i class="grid-loading hide-it"></i>');
       x.find('.grid-loading').fadeIn(1500);
@@ -148,7 +147,7 @@ jQuery(document).ready(function($){
 
       var w = 0;
       y.each(function(){
-          var z = $(this);
+          var z = jQuery(this);
           setTimeout(function(){
           z.addClass('animated fadeOutRightBig').delay(1000).queue(function(){
               z.remove();
@@ -158,50 +157,50 @@ jQuery(document).ready(function($){
 
 	//Popup empty message
 	setTimeout(function(){
-	    $('#notifications').addClass('empty');
+	    jQuery('#notifications').addClass('empty');
 	}, (z*150)+200);
     });
 
     /*
      * Dropdown Menu
      */
-    if($('.dropdown')[0]) {
+    if(jQuery('.dropdown')[0]) {
 	//Propagate
-	$('body').on('click', '.dropdown.open .dropdown-menu', function(e){
+	jQuery('body').on('click', '.dropdown.open .dropdown-menu', function(e){
 	    e.stopPropagation();
 	});
 
-	$('.dropdown').on('shown.bs.dropdown', function (e) {
-	    if($(this).attr('data-animation')) {
-		$animArray = [];
-		$animation = $(this).data('animation');
-		$animArray = $animation.split(',');
-		$animationIn = 'animated '+$animArray[0];
-		$animationOut = 'animated '+ $animArray[1];
-		$animationDuration = ''
-		if(!$animArray[2]) {
-		    $animationDuration = 500; //if duration is not defined, default is set to 500ms
+	jQuery('.dropdown').on('shown.bs.dropdown', function (e) {
+	    if(jQuery(this).attr('data-animation')) {
+		jQueryanimArray = [];
+		jQueryanimation = jQuery(this).data('animation');
+		jQueryanimArray = jQueryanimation.split(',');
+		jQueryanimationIn = 'animated '+jQueryanimArray[0];
+		jQueryanimationOut = 'animated '+ jQueryanimArray[1];
+		jQueryanimationDuration = ''
+		if(!jQueryanimArray[2]) {
+		    jQueryanimationDuration = 500; //if duration is not defined, default is set to 500ms
 		}
 		else {
-		    $animationDuration = $animArray[2];
+		    jQueryanimationDuration = jQueryanimArray[2];
 		}
 
-		$(this).find('.dropdown-menu').removeClass($animationOut)
-		$(this).find('.dropdown-menu').addClass($animationIn);
+		jQuery(this).find('.dropdown-menu').removeClass(jQueryanimationOut)
+		jQuery(this).find('.dropdown-menu').addClass(jQueryanimationIn);
 	    }
 	});
 
-	$('.dropdown').on('hide.bs.dropdown', function (e) {
-	    if($(this).attr('data-animation')) {
+	jQuery('.dropdown').on('hide.bs.dropdown', function (e) {
+	    if(jQuery(this).attr('data-animation')) {
     		e.preventDefault();
-    		$this = $(this);
-    		$dropdownMenu = $this.find('.dropdown-menu');
+    		jQuerythis = jQuery(this);
+    		jQuerydropdownMenu = jQuerythis.find('.dropdown-menu');
 
-    		$dropdownMenu.addClass($animationOut);
+    		jQuerydropdownMenu.addClass(jQueryanimationOut);
     		setTimeout(function(){
-    		    $this.removeClass('open')
+    		    jQuerythis.removeClass('open')
 
-    		}, $animationDuration);
+    		}, jQueryanimationDuration);
     	    }
     	});
     }
@@ -209,9 +208,9 @@ jQuery(document).ready(function($){
     /*
      * Calendar Widget
      */
-    if($('#calendar-widget')[0]) {
+    if(jQuery('#calendar-widget')[0]) {
         (function(){
-            $('#calendar-widget').fullCalendar({
+            jQuery('#calendar-widget').fullCalendar({
 		        contentHeight: 'auto',
 		        theme: true,
                 header: {
@@ -275,8 +274,8 @@ jQuery(document).ready(function($){
     /*
      * Weather Widget
      */
-    if ($('#weather-widget')[0]) {
-        $.simpleWeather({
+    if (jQuery('#weather-widget')[0]) {
+        jQuery.simpleWeather({
             location: 'Austin, TX',
             woeid: '',
             unit: 'f',
@@ -291,10 +290,10 @@ jQuery(document).ready(function($){
                 html += '<div class="weather-list after-tomorrow">';
                 html += '<span class="weather-list-icon wi-'+weather.forecast[2].code+'"></span><span>'+weather.forecast[2].high+'/'+weather.forecast[2].low+'</span><span>'+weather.forecast[2].text+'</span>';
                 html += '</div></div>';
-                $("#weather-widget").html(html);
+                jQuery("#weather-widget").html(html);
             },
             error: function(error) {
-                $("#weather-widget").html('<p>'+error+'</p>');
+                jQuery("#weather-widget").html('<p>'+error+'</p>');
             }
         });
     }
@@ -302,17 +301,17 @@ jQuery(document).ready(function($){
     /*
      * Todo Add new item
      */
-    if ($('#todo-lists')[0]) {
+    if (jQuery('#todo-lists')[0]) {
     	//Add Todo Item
-    	$('body').on('click', '#add-tl-item .add-new-item', function(){
-    	    $(this).parent().addClass('toggled');
+    	jQuery('body').on('click', '#add-tl-item .add-new-item', function(){
+    	    jQuery(this).parent().addClass('toggled');
     	});
 
             //Dismiss
-            $('body').on('click', '.add-tl-actions > a', function(e){
+            jQuery('body').on('click', '.add-tl-actions > a', function(e){
                 e.preventDefault();
-                var x = $(this).closest('#add-tl-item');
-                var y = $(this).data('tl-action');
+                var x = jQuery(this).closest('#add-tl-item');
+                var y = jQuery(this).data('tl-action');
 
                 if (y == "dismiss") {
                     x.find('textarea').val('');
@@ -329,15 +328,15 @@ jQuery(document).ready(function($){
     /*
      * Auto Hight Textarea
      */
-    if ($('.auto-size')[0]) {
-	   autosize($('.auto-size'));
+    if (jQuery('.auto-size')[0]) {
+	   autosize(jQuery('.auto-size'));
     }
 
     /*
      * Custom Scrollbars
      */
     function scrollbar(className, color, cursorWidth) {
-        $(className).niceScroll({
+        jQuery(className).niceScroll({
             cursorcolor: color,
             cursorborder: 0,
             cursorborderradius: 0,
@@ -347,35 +346,37 @@ jQuery(document).ready(function($){
             //autohidemode: false
         });
     }
+    scrollbar('html', 'rgba(0,0,0,0.3)', '5px');
 
     //Scrollbar for HTML(not mobile) but not for login page
-    if (!$('html').hasClass('ismobile')) {
-        if (!$('.login-content')[0]) {
+    if (!jQuery('html').hasClass('ismobile')) {
+
+        if (!jQuery('.login-content')[0]) {
             scrollbar('html', 'rgba(0,0,0,0.3)', '5px');
         }
 
         //Scrollbar Tables
-        if ($('.table-responsive')[0]) {
+        if (jQuery('.table-responsive')[0]) {
             scrollbar('.table-responsive', 'rgba(0,0,0,0.5)', '5px');
         }
 
         //Scrill bar for Chosen
-        if ($('.chosen-results')[0]) {
+        if (jQuery('.chosen-results')[0]) {
             scrollbar('.chosen-results', 'rgba(0,0,0,0.5)', '5px');
         }
 
         //Scroll bar for tabs
-        if ($('.tab-nav')[0]) {
+        if (jQuery('.tab-nav')[0]) {
             scrollbar('.tab-nav', 'rgba(0,0,0,0)', '1px');
         }
 
         //Scroll bar for dropdowm-menu
-        if ($('.dropdown-menu .c-overflow')[0]) {
+        if (jQuery('.dropdown-menu .c-overflow')[0]) {
             scrollbar('.dropdown-menu .c-overflow', 'rgba(0,0,0,0.5)', '0px');
         }
 
         //Scrollbar for rest
-        if ($('.c-overflow')[0]) {
+        if (jQuery('.c-overflow')[0]) {
             scrollbar('.c-overflow', 'rgba(0,0,0,0.5)', '5px');
         }
     }
@@ -384,10 +385,10 @@ jQuery(document).ready(function($){
     /*
     * Profile Menu
     */
-    $('body').on('click', '.profile-menu > a', function(e){
+    jQuery('body').on('click', '.profile-menu > a', function(e){
         e.preventDefault();
-        $(this).parent().toggleClass('toggled');
-	    $(this).next().slideToggle(200);
+        jQuery(this).parent().toggleClass('toggled');
+	    jQuery(this).next().slideToggle(200);
     });
 
     /*
@@ -395,33 +396,33 @@ jQuery(document).ready(function($){
      */
 
     //Add blue animated border and remove with condition when focus and blur
-    if($('.fg-line')[0]) {
-        $('body').on('focus', '.form-control', function(){
-            $(this).closest('.fg-line').addClass('fg-toggled');
+    if(jQuery('.fg-line')[0]) {
+        jQuery('body').on('focus', '.form-control', function(){
+            jQuery(this).closest('.fg-line').addClass('fg-toggled');
         })
 
-        $('body').on('blur', '.form-control', function(){
-            var p = $(this).closest('.form-group');
+        jQuery('body').on('blur', '.form-control', function(){
+            var p = jQuery(this).closest('.form-group');
             var i = p.find('.form-control').val();
 
             if (p.hasClass('fg-float')) {
                 if (i.length == 0) {
-                    $(this).closest('.fg-line').removeClass('fg-toggled');
+                    jQuery(this).closest('.fg-line').removeClass('fg-toggled');
                 }
             }
             else {
-                $(this).closest('.fg-line').removeClass('fg-toggled');
+                jQuery(this).closest('.fg-line').removeClass('fg-toggled');
             }
         });
     }
 
     //Add blue border for pre-valued fg-flot text feilds
-    if($('.fg-float')[0]) {
-        $('.fg-float .form-control').each(function(){
-            var i = $(this).val();
+    if(jQuery('.fg-float')[0]) {
+        jQuery('.fg-float .form-control').each(function(){
+            var i = jQuery(this).val();
 
             if (!i.length == 0) {
-                $(this).closest('.fg-line').addClass('fg-toggled');
+                jQuery(this).closest('.fg-line').addClass('fg-toggled');
             }
 
         });
@@ -430,15 +431,15 @@ jQuery(document).ready(function($){
     /*
      * Audio and Video
      */
-    /*(if($('audio, video')[0]) {
-        $('video,audio').mediaelementplayer();
+    /*(if(jQuery('audio, video')[0]) {
+        jQuery('video,audio').mediaelementplayer();
     }*/
 
     /*
      * Tag Select
      */
-    if($('.tag-select')[0]) {
-        $('.tag-select').chosen({
+    if(jQuery('.tag-select')[0]) {
+        jQuery('.tag-select').chosen({
             width: '100%',
             allow_single_deselect: true
         });
@@ -448,11 +449,11 @@ jQuery(document).ready(function($){
      * Input Slider
      */
     //Basic
-    if($('.input-slider')[0]) {
-        $('.input-slider').each(function(){
-            var isStart = $(this).data('is-start');
+    if(jQuery('.input-slider')[0]) {
+        jQuery('.input-slider').each(function(){
+            var isStart = jQuery(this).data('is-start');
 
-            $(this).noUiSlider({
+            jQuery(this).noUiSlider({
                 start: isStart,
                 range: {
                     'min': 0,
@@ -463,8 +464,8 @@ jQuery(document).ready(function($){
     }
 
     //Range slider
-    if($('.input-slider-range')[0]) {
-	$('.input-slider-range').noUiSlider({
+    if(jQuery('.input-slider-range')[0]) {
+	jQuery('.input-slider-range').noUiSlider({
 	    start: [30, 60],
 	    range: {
 		    'min': 0,
@@ -475,8 +476,8 @@ jQuery(document).ready(function($){
     }
 
     //Range slider with value
-    if($('.input-slider-values')[0]) {
-	$('.input-slider-values').noUiSlider({
+    if(jQuery('.input-slider-values')[0]) {
+	jQuery('.input-slider-values').noUiSlider({
 	    start: [ 45, 80 ],
 	    connect: true,
 	    direction: 'rtl',
@@ -487,25 +488,25 @@ jQuery(document).ready(function($){
 	    }
 	});
 
-	$('.input-slider-values').Link('lower').to($('#value-lower'));
-        $('.input-slider-values').Link('upper').to($('#value-upper'), 'html');
+	jQuery('.input-slider-values').Link('lower').to(jQuery('#value-lower'));
+        jQuery('.input-slider-values').Link('upper').to(jQuery('#value-upper'), 'html');
     }
 
     /*
      * Input Mask
      */
-    if ($('input-mask')[0]) {
-        $('.input-mask').mask();
+    if (jQuery('input-mask')[0]) {
+        jQuery('.input-mask').mask();
     }
 
     /*
      * Color Picker
      */
-    if ($('.color-picker')[0]) {
-	$('.color-picker').each(function(){
-	    $('.color-picker').each(function(){
-            var colorOutput = $(this).closest('.cp-container').find('.cp-value');
-                $(this).farbtastic(colorOutput);
+    if (jQuery('.color-picker')[0]) {
+	jQuery('.color-picker').each(function(){
+	    jQuery('.color-picker').each(function(){
+            var colorOutput = jQuery(this).closest('.cp-container').find('.cp-value');
+                jQuery(this).farbtastic(colorOutput);
             });
         });
     }
@@ -513,33 +514,33 @@ jQuery(document).ready(function($){
     /*
      * HTML Editor
      */
-    if ($('.html-editor')[0]) {
-	   $('.html-editor').summernote({
+    if (jQuery('.html-editor')[0]) {
+	   jQuery('.html-editor').summernote({
             height: 150
         });
     }
 
-    if($('.html-editor-click')[0]) {
+    if(jQuery('.html-editor-click')[0]) {
 	//Edit
-	$('body').on('click', '.hec-button', function(){
-	    $('.html-editor-click').summernote({
+	jQuery('body').on('click', '.hec-button', function(){
+	    jQuery('.html-editor-click').summernote({
             focus: true
 	    });
-	    $('.hec-save').show();
+	    jQuery('.hec-save').show();
 	})
 
 	//Save
-	$('body').on('click', '.hec-save', function(){
-	    $('.html-editor-click').code();
-            $('.html-editor-click').destroy();
-            $('.hec-save').hide();
+	jQuery('body').on('click', '.hec-save', function(){
+	    jQuery('.html-editor-click').code();
+            jQuery('.html-editor-click').destroy();
+            jQuery('.hec-save').hide();
             notify('Content Saved Successfully!', 'success');
         });
     }
 
     //Air Mode
-    if($('.html-editor-airmod')[0]) {
-        $('.html-editor-airmod').summernote({
+    if(jQuery('.html-editor-airmod')[0]) {
+        jQuery('.html-editor-airmod').summernote({
             airMode: true
         });
     }
@@ -549,20 +550,20 @@ jQuery(document).ready(function($){
      */
 
     //Date Time Picker
-    if ($('.date-time-picker')[0]) {
-	   $('.date-time-picker').datetimepicker();
+    if (jQuery('.date-time-picker')[0]) {
+	   jQuery('.date-time-picker').datetimepicker();
     }
 
     //Time
-    if ($('.time-picker')[0]) {
-    	$('.time-picker').datetimepicker({
+    if (jQuery('.time-picker')[0]) {
+    	jQuery('.time-picker').datetimepicker({
     	    format: 'LT'
     	});
     }
 
     //Date
-    if ($('.date-picker')[0]) {
-    	$('.date-picker').datetimepicker({
+    if (jQuery('.date-picker')[0]) {
+    	jQuery('.date-picker').datetimepicker({
     	    format: 'DD/MM/YYYY'
     	});
     }
@@ -571,8 +572,8 @@ jQuery(document).ready(function($){
      * Form Wizard
      */
 
-    if ($('.form-wizard-basic')[0]) {
-    	$('.form-wizard-basic').bootstrapWizard({
+    if (jQuery('.form-wizard-basic')[0]) {
+    	jQuery('.form-wizard-basic').bootstrapWizard({
     	    tabClass: 'fw-nav',
             'nextSelector': '.next',
             'previousSelector': '.previous'
@@ -583,7 +584,7 @@ jQuery(document).ready(function($){
      * Bootstrap Growl - Notifications popups
      */
     function notify(message, type){
-        $.growl({
+        jQuery.growl({
             message: message
         },{
             type: type,
@@ -618,8 +619,8 @@ jQuery(document).ready(function($){
     /*
      * Lightbox
      */
-    if ($('.lightbox')[0]) {
-        $('.lightbox').lightGallery({
+    if (jQuery('.lightbox')[0]) {
+        jQuery('.lightbox').lightGallery({
             enableTouch: true
         });
     }
@@ -627,42 +628,41 @@ jQuery(document).ready(function($){
     /*
      * Link prevent
      */
-    $('body').on('click', '.a-prevent', function(e){
+    jQuery('body').on('click', '.a-prevent', function(e){
         e.preventDefault();
     });
 
     /*
      * Collaspe Fix
      */
-    if ($('.collapse')[0]) {
-
+    if (jQuery('.collapse')[0]) {
         //Add active class for opened items
-        $('.collapse').on('show.bs.collapse', function (e) {
-            $(this).closest('.panel').find('.panel-heading').addClass('active');
+        jQuery('.collapse').on('show.bs.collapse', function (e) {
+            jQuery(this).closest('.panel').find('.panel-heading').addClass('active');
         });
 
-        $('.collapse').on('hide.bs.collapse', function (e) {
-            $(this).closest('.panel').find('.panel-heading').removeClass('active');
+        jQuery('.collapse').on('hide.bs.collapse', function (e) {
+            jQuery(this).closest('.panel').find('.panel-heading').removeClass('active');
         });
 
         //Add active class for pre opened items
-        $('.collapse.in').each(function(){
-            $(this).closest('.panel').find('.panel-heading').addClass('active');
+        jQuery('.collapse.in').each(function(){
+            jQuery(this).closest('.panel').find('.panel-heading').addClass('active');
         });
     }
 
     /*
      * Tooltips
      */
-    if ($('[data-toggle="tooltip"]')[0]) {
-        $('[data-toggle="tooltip"]').tooltip();
+    if (jQuery('[data-toggle="tooltip"]')[0]) {
+        jQuery('[data-toggle="tooltip"]').tooltip();
     }
 
     /*
      * Popover
      */
-    if ($('[data-toggle="popover"]')[0]) {
-        $('[data-toggle="popover"]').popover();
+    if (jQuery('[data-toggle="popover"]')[0]) {
+        jQuery('[data-toggle="popover"]').popover();
     }
 
     /*
@@ -670,12 +670,12 @@ jQuery(document).ready(function($){
      */
 
     //Actions
-    if ($('.on-select')[0]) {
+    if (jQuery('.on-select')[0]) {
         var checkboxes = '.lv-avatar-content input:checkbox';
-        var actions = $('.on-select').closest('.lv-actions');
+        var actions = jQuery('.on-select').closest('.lv-actions');
 
-        $('body').on('click', checkboxes, function() {
-            if ($(checkboxes+':checked')[0]) {
+        jQuery('body').on('click', checkboxes, function() {
+            if (jQuery(checkboxes+':checked')[0]) {
                 actions.addClass('toggled');
             }
             else {
@@ -684,29 +684,29 @@ jQuery(document).ready(function($){
         });
     }
 
-    if($('#ms-menu-trigger')[0]) {
-        $('body').on('click', '#ms-menu-trigger', function(e){
+    if(jQuery('#ms-menu-trigger')[0]) {
+        jQuery('body').on('click', '#ms-menu-trigger', function(e){
             e.preventDefault();
-            $(this).toggleClass('open');
-            $('.ms-menu').toggleClass('toggled');
+            jQuery(this).toggleClass('open');
+            jQuery('.ms-menu').toggleClass('toggled');
         });
     }
 
     /*
      * Login
      */
-    if ($('.login-content')[0]) {
+    if (jQuery('.login-content')[0]) {
         //Add class to HTML. This is used to center align the logn box
-        $('html').addClass('login-content');
+        jQuery('html').addClass('login-content');
 
-        $('body').on('click', '.login-navigation > li', function(){
-            var z = $(this).data('block');
-            var t = $(this).closest('.lc-block');
+        jQuery('body').on('click', '.login-navigation > li', function(){
+            var z = jQuery(this).data('block');
+            var t = jQuery(this).closest('.lc-block');
 
             t.removeClass('toggled');
 
             setTimeout(function(){
-                $(z).addClass('toggled');
+                jQuery(z).addClass('toggled');
             });
 
         })
@@ -715,8 +715,8 @@ jQuery(document).ready(function($){
     /*
      * Fullscreen Browsing
      */
-    if ($('[data-action="fullscreen"]')[0]) {
-	var fs = $("[data-action='fullscreen']");
+    if (jQuery('[data-action="fullscreen"]')[0]) {
+	var fs = jQuery("[data-action='fullscreen']");
 	fs.on('click', function(e) {
 	    e.preventDefault();
 
@@ -754,8 +754,8 @@ jQuery(document).ready(function($){
     /*
      * Clear Local Storage
      */
-    if ($('[data-action="clear-localstorage"]')[0]) {
-        var cls = $('[data-action="clear-localstorage"]');
+    if (jQuery('[data-action="clear-localstorage"]')[0]) {
+        var cls = jQuery('[data-action="clear-localstorage"]');
 
         cls.on('click', function(e) {
             e.preventDefault();
@@ -778,17 +778,17 @@ jQuery(document).ready(function($){
     /*
      * Profile Edit Toggle
      */
-    if ($('[data-pmb-action]')[0]) {
-        $('body').on('click', '[data-pmb-action]', function(e){
+    if (jQuery('[data-pmb-action]')[0]) {
+        jQuery('body').on('click', '[data-pmb-action]', function(e){
             e.preventDefault();
-            var d = $(this).data('pmb-action');
+            var d = jQuery(this).data('pmb-action');
 
             if (d === "edit") {
-                $(this).closest('.pmb-block').toggleClass('toggled');
+                jQuery(this).closest('.pmb-block').toggleClass('toggled');
             }
 
             if (d === "reset") {
-                $(this).closest('.pmb-block').removeClass('toggled');
+                jQuery(this).closest('.pmb-block').removeClass('toggled');
             }
 
 
@@ -798,8 +798,8 @@ jQuery(document).ready(function($){
     /*
      * IE 9 Placeholder
      */
-    if($('html').hasClass('ie9')) {
-        $('input, textarea').placeholder({
+    if(jQuery('html').hasClass('ie9')) {
+        jQuery('input, textarea').placeholder({
             customClass: 'ie9-placeholder'
         });
     }
@@ -808,19 +808,19 @@ jQuery(document).ready(function($){
     /*
      * Listview Search
      */
-    if ($('.lvh-search-trigger')[0]) {
+    if ( jQuery('.lvh-search-trigger')[0] ) {
 
 
-        $('body').on('click', '.lvh-search-trigger', function(e){
+        jQuery('body').on('click', '.lvh-search-trigger', function(e){
             e.preventDefault();
-            x = $(this).closest('.lv-header-alt').find('.lvh-search');
+            x = jQuery(this).closest('.lv-header-alt').find('.lvh-search');
 
             x.fadeIn(300);
             x.find('.lvhs-input').focus();
         });
 
         //Close Search
-        $('body').on('click', '.lvh-search-close', function(){
+        jQuery('body').on('click', '.lvh-search-close', function(){
             x.fadeOut(300);
             setTimeout(function(){
                 x.find('.lvhs-input').val('');
@@ -832,8 +832,8 @@ jQuery(document).ready(function($){
     /*
      * Print
      */
-    if ($('[data-action="print"]')[0]) {
-        $('body').on('click', '[data-action="print"]', function(e){
+    if (jQuery('[data-action="print"]')[0]) {
+        jQuery('body').on('click', '[data-action="print"]', function(e){
             e.preventDefault();
 
             window.print();
@@ -843,7 +843,7 @@ jQuery(document).ready(function($){
     /*
      * Typeahead Auto Complete
      */
-     if($('.typeahead')[0]) {
+     if(jQuery('.typeahead')[0]) {
 
           var statesArray = ['Alabama', 'Alaska', 'Arizona', 'Arkansas', 'California',
             'Colorado', 'Connecticut', 'Delaware', 'Florida', 'Georgia', 'Hawaii',
@@ -861,7 +861,7 @@ jQuery(document).ready(function($){
             local: statesArray
         });
 
-        $('.typeahead').typeahead({
+        jQuery('.typeahead').typeahead({
             hint: true,
             highlight: true,
             minLength: 1
@@ -872,11 +872,10 @@ jQuery(document).ready(function($){
         });
     }
 
-
     /*
      * Wall
      */
-    if ($('.wcc-toggle')[0]) {
+    if (jQuery('.wcc-toggle')[0]) {
         var z = '<div class="wcc-inner">' +
                     '<textarea class="wcci-text auto-size" placeholder="Write Something..."></textarea>' +
                 '</div>' +
@@ -886,18 +885,16 @@ jQuery(document).ready(function($){
                 '</div>'
 
 
-        $('body').on('click', '.wcc-toggle', function() {
-            $(this).parent().html(z);
-            autosize($('.auto-size')); //Reload Auto size textarea
+        jQuery('body').on('click', '.wcc-toggle', function() {
+            jQuery(this).parent().html(z);
+            autosize(jQuery('.auto-size')); //Reload Auto size textarea
         });
 
         //Cancel
-        $('body').on('click', '.wcc-cencel', function(e) {
+        jQuery('body').on('click', '.wcc-cencel', function(e) {
             e.preventDefault();
 
-            $(this).closest('.wc-comment').find('.wcc-inner').addClass('wcc-toggle').html('Write Something...')
+            jQuery(this).closest('.wc-comment').find('.wcc-inner').addClass('wcc-toggle').html('Write Something...')
         });
-
     }
-
 });

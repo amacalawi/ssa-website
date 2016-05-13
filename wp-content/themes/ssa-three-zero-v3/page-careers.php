@@ -96,9 +96,6 @@ $subscript = get_post_meta( get_the_ID(), 'custom_subscript', true ); ?>
             <div class="clearfix"></div>
         </div>
     </div>
-
-
-
 </section>
 
 <?php if( !empty($tagline) && !empty($bg) ): ?>

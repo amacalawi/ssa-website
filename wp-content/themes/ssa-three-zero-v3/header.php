@@ -1,5 +1,4 @@
-<!doctype html>
-
+<!DOCTYPE html>
 <!--[if IEMobile 7 ]> <html <?php language_attributes(); ?>class="no-js iem7"> <![endif]-->
 <!--[if lt IE 7 ]> <html <?php language_attributes(); ?> class="no-js ie6"> <![endif]-->
 <!--[if IE 7 ]>    <html <?php language_attributes(); ?> class="no-js ie7"> <![endif]-->
@@ -32,6 +31,9 @@
 	<!--[if lt IE 9]>
 	    <script type='text/javascript' src="http://cdnjs.cloudflare.com/ajax/libs/respond.js/1.4.2/respond.js"></script>
 	<![endif]-->
+	<script>
+		var template_url = "<?php echo get_template_directory_uri(); ?>";
+	</script>
 </head>
 
 <body <?php body_class(); ?>>

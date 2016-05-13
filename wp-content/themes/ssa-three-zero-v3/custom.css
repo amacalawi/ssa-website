@@ -501,7 +501,7 @@ footer .outer li a:hover {
 		padding-left: 60px;
 	}
 }
-footer #back-to-top{
+footer #back-to-top {
 	position: fixed;
 	text-align: center;
 	padding: 7px 8px;
@@ -512,8 +512,6 @@ footer #back-to-top{
 	width: 44px;
 	height: 38px;
 	transition: .4s all ease-in-out;
-	bottom: -40px;
-	right: 40px;
 }
 footer #back-to-top:hover,
 footer #back-to-top:focus {
