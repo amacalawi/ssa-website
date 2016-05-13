@@ -596,4 +596,10 @@ form.commenting input[type=submit]:hover {
     font-size: 0.9em;
 }
 
-.single-post
+section.career-content .col-sm-8 .panel-title, section.career-content .col-sm-8 .panel-title a {
+    font-weight: normal;
+    font-family: 'lato_reg';
+    font-size: 17px;
+    padding: 3px 0;
+    transition: .4s all ease-in-out;
+}

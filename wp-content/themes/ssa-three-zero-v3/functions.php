@@ -806,7 +806,7 @@ class Bootstrap_walker extends Walker_Nav_Menu{
 add_editor_style('editor-style.css');
 
 function wp_bootstrap_add_active_class($classes, $item) {
-	if( $item->menu_item_parent == 0 && in_array('current-menu-item', $classes) ) {
+  if( $item->menu_item_parent == 0 && in_array('current-menu-item', $classes) || ($item->menu_item_parent == 0 && in_array('current_page_parent', $classes)) ) {
     $classes[] = "active";
 	}
 
@@ -1109,6 +1109,7 @@ add_filter( 'the_content', 'wp_bootstrap_filter_ptags_on_images' );
 // Custom Post Types
 require_once "library/testimonial-custom-post-type.php";
 require_once "library/milestone-custom-post-type.php";
+require_once "library/careers-custom-post-type.php";
 
 
 // Enable span tags in the Editor
