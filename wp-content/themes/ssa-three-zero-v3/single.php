@@ -3,10 +3,11 @@ get_header();
 
 if ( have_posts() ) while ( have_posts() ) : the_post(); ?>
 
-    <div class="blog-banner-holder">
-        <div class="col-sm-8">
+<section id="banner" class="blog_inner_banner banner bg" data-bg="<?php echo get_the_post_thumbnail_url_raw(); ?>">
+    <div class="blog-banner-holder clearfix">
+        <div class="col-sm-10 widths-10">
             <div class="row">
-                <div class="col-sm-offset-4 col-sm-8">
+                <div class="col-sm-offset-2 col-sm-10">
                     <div class="row">
                         <h1 class="wcolor title">
                             <strong class="animated flipInX">
@@ -21,7 +22,7 @@ if ( have_posts() ) while ( have_posts() ) : the_post(); ?>
                                 echo $fname . "&nbsp;" . $lname; ?>
                             </span>
                             <span class="post-date"><?php echo get_the_date(); ?></span>
-                            <span class="category-list"><?php echo get_the_category_list(', ') ?></span>
+                            <!-- <span class="category-list"><?php echo get_the_category_list(', ') ?></span> -->
                             <span class="pull-right">
                                 <a href="#" class="btn btn-circle icon">
                                     <i class="zmdi zmdi-twitter"></i>
@@ -40,9 +41,7 @@ if ( have_posts() ) while ( have_posts() ) : the_post(); ?>
 
         </div>
 
-        <div class="col-sm-8 border-bottom">
-
-        </div>
+        <div class="col-sm-10 widths-10 border-bottom"></div>
     </div>
     <div class="bottom_right_slanted"></div>
 
@@ -81,9 +80,7 @@ if ( have_posts() ) while ( have_posts() ) : the_post(); ?>
                         <div class="clearfix"></div>
                     </div>
 
-                    <?php
-
-                        comments_template(); ?>
+                    <?php comments_template(); ?>
 
                 </div>
             </div><div class="clearfix"></div>

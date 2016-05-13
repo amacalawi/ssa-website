@@ -639,7 +639,6 @@ section.services_banner .know-more:focus  {
 section.blogs_banner {
 	width: 100%;
 	padding: 0;
-	background: url(../img/blog_bg.png);
 	background-repeat: no-repeat;
 	background-size: cover;
 	background-attachment: fixed;
@@ -969,7 +968,6 @@ section.event_content .nav-holder ul li.active {
 section.taglines {
 	width: 100%;
 	padding: 90px 0;
-	background: url(../img/taglines-bg.png);
 	background-repeat: no-repeat;
 	background-size: cover;
 	background-attachment: fixed;

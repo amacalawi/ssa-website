@@ -293,3 +293,307 @@ section.espresso_events_banner .event-datetimes ul {
 .ee-event-datetimes-li span:not(:first-child) {
     margin-left: 2em;
 }
+
+.blog-banner-holder {
+    padding-top: 160px;
+}
+
+section.blog_inner_banner p.desc .btn-circle {
+    width: 36px;
+}
+
+/* blog inner banner start */
+section.blog_inner_banner,
+section.post_banner {
+    width: 100%;
+    padding: 0;
+    /*background: url(../img/blog-inner-bg.jpg);*/
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+}
+section.blog_inner_banner .bouncing_arrow,
+section.post_banner .bouncing_arrow ,
+.bouncing_arrow {
+    position: absolute;
+    bottom: 130px;
+    left: 50%;
+    width: 40px;
+    text-align: center;
+    height: 40px;
+    margin-left: -20px;
+
+}
+section.blog_inner_banner .bouncing_arrow i,
+section.post_banner .bouncing_arrow i,
+.bouncing_arrow i {
+    font-size: 60px;
+}
+@media (min-width: 768px) {
+    section.blog_inner_banner,
+    section.post_banner {
+        min-height: 768px;
+    }
+}
+section.blog_inner_banner h1.title,
+section.post_banner h1.title {
+    margin-top: 120px;
+    font-size: 55px;
+    padding: 20px 0;
+    line-height: 55px;
+}
+section.blog_inner_banner p.desc,
+section.post_banner p.desc {
+    font-size: 22px;
+    font-weight: normal;
+    margin-top: -10px;
+}
+section.blog_inner_banner p.desc a,
+section.post_banner p.desc a,
+.btn-circle.icon {
+    border-radius: 50%;
+    margin-left: 10px;
+    background: #ffbf3d;
+    font-size: 17px;
+    width: 32px;
+    color: #333;
+    text-align: center;
+}
+.btn-circle.icon {
+    width: 32px;
+    height: 32px;
+    padding: 5px;
+}
+section.blog_inner_banner .post-meta-info .category-list a,
+section.post_banner .post-meta-info .category-list a {
+    background: none;
+    color: #ffffff;
+}
+.post-meta-info span:not(:last-child):after {
+    content: "";
+    border-right: 1px solid #ffffff;
+    margin-right: 0.5em;
+    margin-left: 0.5em;
+}
+.post-meta-info span a {
+    margin-left: 0 !important;
+}
+section.blog_inner_banner img.anniv_logo,
+section.post_banner img.anniv_logo {
+    margin-top: 50px;
+    max-width: 300px;
+}
+section.blog_inner_banner .border-bottom,
+section.post_banner .border-bottom {
+    border-bottom: 1px solid #fff;
+}
+
+section.blog-inner-content,
+section.post-content {
+    padding: 90px 0 160px 0;
+}
+section.blog-inner-content img,
+section.post-content img {
+    max-width: 100%;
+
+}
+section.blog-inner-content .insider,
+section.post-content .insider {
+    z-index: 2;
+    margin-top: -70px;
+}
+section.blog-inner-content .inside,
+section.post-content .inside {
+    margin-bottom: 30px;
+    z-index: 999;
+}
+section.blog-inner-content .inside p,
+section.post-content .inside p {
+    font-size: 21px;
+    color: #757575;
+}
+section.blog-inner-content .inside h1,
+section.post-content .inside h1 {
+    font-size: 40px;
+    margin-top: 0;
+    padding: 0;
+    color: #7c7c7c;
+}
+section.blog-inner-content .inside p,
+section.blog-inner-content .inside img,
+section.blog-inner-content .inside h1,
+section.post-content .inside p,
+section.post-content .inside img,
+section.post-content .inside h1 {
+    margin-bottom: 40px;
+}
+
+section.blog-inner-content .inside .share-post,
+section.post-content .inside .share-post {
+    border-bottom: 1px solid #e0e0e0;
+    border-top: 1px solid #e0e0e0;
+    position: relative;
+    padding: 20px 0;
+}
+section.blog-inner-content .inside .share-post p,
+section.post-content .inside .share-post p {
+    font-size: 20px;
+    margin: 0;
+    padding: 0;
+    line-height: 24px;
+}
+section.blog-inner-content .inside .share-post a,
+section.post-content .inside .share-post a {
+    color: #787878;
+}
+section.blog-inner-content .inside .share-post a:hover,
+section.post-content .inside .share-post a:hover {
+    border-bottom: 1px dashed #787878;
+}
+section.blog-inner-content .inside .share-link a,
+section.post-content .inside .share-link a {
+    background: #787878;
+    width: 24px;
+    height: 24px;
+    line-height: 24px;
+    font-size: 16px;
+    border-radius: 50%;
+    color: #fff;
+    text-align: center;
+    float: right;
+    margin-left: 10px;
+}
+
+.comments {
+    margin-top: 2em;
+}
+.comments .comment.depth-1:not(:first-child) {
+    border-top: 1px solid rgba(0,0,0,0.05);
+    padding-top: 1em;
+}
+section.blog-inner-content .comments p.comments-head,
+section.post-content .comments p.comments-head {
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+section.blog-inner-content .comments p,
+section.post-content .comments p {
+    margin: 0;
+    font-size: 18px;
+}
+section.blog-inner-content .comments li,
+section.post-content .comments li {
+    list-style: none;
+}
+section.blog-inner-content .comments .author a,
+section.post-content .comments .author a,
+.commented .commentator a {
+    color: #ffbf3d;
+    font-weight: bold;
+}
+section.blog-inner-content .comments .date,
+section.post-content .comments .date,
+.date a {
+    font-size: 16px;
+    color: #c3c3c3;
+}
+section.blog-inner-content .repz,
+section.post-content .repz {
+    color: #787878;
+    font-weight: normal;
+    font-size: 14px;
+}
+section.blog-inner-content .comments .reply-link {
+    margin-top: 1em;
+    margin-bottom: 1em;
+}
+section.blog-inner-content .comments .reply-link a,
+section.post-content .comments .reply-link a {
+    font-size: 16px;
+    color: #787878;
+    border-bottom: 1px dashed #787878;
+    transition: .4s all ease-in-out;
+}
+section.blog-inner-content .comments .reply-link a:hover,
+section.post-content .comments .reply-link a:hover {
+    color: #ffbf3d;
+    transition: .2s all ease-in-out;
+}
+section.blog-inner-content .comment-bottom,
+section.post-content .comment-bottom {
+    border-top: 1px solid #e0e0e0;
+    margin-top: 20px;
+    padding-top: 35px;
+}
+
+.comments .bypostauthor .author a span {
+    font-size: 0.9em;
+    color: #c3c3c3;
+}
+.comments .comment .comment-info {
+    margin-top: 1em;
+    margin-bottom: 1em;
+}
+/* blog inner banner end */
+
+/* form comments start */
+form.commenting input[type="text"] {
+    border: 1px solid #e0e0e0 ;
+    padding: 20px 20px;
+    color: #5a5a5a;
+    margin: 0;
+}
+form.commenting textarea {
+    border: 1px solid #e0e0e0 !important;
+    padding: 20px 20px !important;
+    color: #5a5a5a;
+    margin: 0;
+}
+form.commenting input[type="text"]:focus,
+form.commenting textarea:focus {
+    border: 1px solid #5a5a5a !important;
+    transition: .2s all ease-in-out;
+}
+form.commenting .form-group{
+    margin-bottom: 25px;
+}
+form.commenting button,
+form.commenting input[type=submit] {
+    border: 1px solid #e0e0e0;
+    padding: 8px 70px !important;
+    margin-bottom: 50px;
+    color: #c2c2c2;
+    background: #fff;
+    float:right;
+    transition: .4s all ease-in-out;
+}
+form.commenting button:hover,
+form.commenting button:focus,
+form.commenting input[type=submit]:focus,
+form.commenting input[type=submit]:hover {
+    border: 1px solid #5a5a5a;
+    color: #5a5a5a;
+    transition: .2s all ease-in-out;
+}
+.other-articles {
+    position: absolute;
+    bottom: 70px;
+    width: 100%;
+    left: 0;
+}
+.other-articles span{
+    border-bottom: 1px solid #5a5a5a;
+    display: inline-block;
+    font-size: 20px;
+    padding: 5px 20px;
+    text-transform: uppercase;
+}
+
+/* form comments end */
+
+.suggested-blog-item .author + .date {
+    display: block;
+    font-size: 0.9em;
+}
+
+.single-post
