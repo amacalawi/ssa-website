@@ -4,9 +4,17 @@ jQuery(document).ready(function ($) {
         jQuery(this).css({'background-image': 'url('+jQuery(this).data('bg')+')'});
     });
 
-    (function() {
+    $('#back-to-top').bind('click', function(event) {
+        var $anchor = $(this);
+        $('body, html').stop().animate({
+            scrollTop: $($anchor.attr('href')).offset().top
+        }, 1500, 'easeInOutExpo');
+        event.preventDefault();
+    });
+
+    // (function() {
         /* testimonial script starts here */
-        $('.owl-carousel').owlCarousel({
+        jQuery('.owl-carousel').owlCarousel({
             autoHeight:true,
             animateOut: 'slideOutDown',
             animateIn: 'zoomIn',
@@ -110,27 +118,6 @@ jQuery(document).ready(function ($) {
             event.preventDefault();
         });
         /* arrow navigation ends here */
-
-        $('#back-to-top').bind('click', function(event) {
-            var $anchor = $(this);
-            $('body, html').stop().animate({
-                scrollTop: $($anchor.attr('href')).offset().top
-            }, 1500, 'easeInOutExpo');
-            event.preventDefault();
-        });
-        /* nav transition starts here */
-        jQuery(document).scroll(function () {
-            var position = jQuery(document).scrollTop();
-            var headerHeight = jQuery('#banner').outerHeight();
-            console.log("scroll:", position, "height:", headerHeight);
-
-            if (position >= headerHeight - 300 ){
-                jQuery('#back-to-top').addClass('moved');
-            } else {
-                jQuery('#back-to-top').removeClass('moved');
-            }
-        });
-        /* nav transition ends here */
 
 
         /* blog img transition starts here */
@@ -250,6 +237,20 @@ jQuery(document).ready(function ($) {
 
         $('video').click(function(){this.paused?this.play():this.pause();});
 
-    });
+    // });
 
 });
+
+/* nav transition starts here */
+jQuery(document).scroll(function() {
+    var position = jQuery(document).scrollTop();
+    var headerHeight = jQuery('#banner').outerHeight();
+    // console.log("scroll:", position, "height:", headerHeight);
+
+    if (position >= headerHeight - 300 ){
+        jQuery('#back-to-top').addClass('moved');
+    } else {
+        jQuery('#back-to-top').removeClass('moved');
+    }
+});
+/* nav transition ends here */
