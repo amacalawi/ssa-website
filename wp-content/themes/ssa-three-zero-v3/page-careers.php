@@ -77,7 +77,7 @@ $subscript = get_post_meta( get_the_ID(), 'custom_subscript', true ); ?>
                                                 </a>
                                               </h4>
                                             </div>
-                                            <div id="career_<?php the_ID() ?>" class="panel-collapse collapse" role="tabpanel" aria-labelledby="careerHeading_<?php the_ID() ?>">
+                                            <div id="career_<?php the_ID(); ?>" class="panel-collapse collapse" role="tabpanel" aria-labelledby="careerHeading_<?php the_ID() ?>">
                                                 <div class="panel-body">
                                                     <?php the_content(); ?>
                                                 </div>
